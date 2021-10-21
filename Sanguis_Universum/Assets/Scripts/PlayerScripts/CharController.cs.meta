@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 912f6b91ed210f74ba7b687ff77c24ca
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - GroundCheck: {instanceID: 0}
+  - PlayerPosition: {fileID: 11400000, guid: b85db5334182966458e20c871e2a6e59, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
