@@ -30,9 +30,7 @@ public class SwitcherOfScenes : MonoBehaviour
     {
         anim = GetComponent<Animator>();
             LoadUnit.Invoke();
-
     }
-
 
     public void IsOpened(GameObject obj)
     {

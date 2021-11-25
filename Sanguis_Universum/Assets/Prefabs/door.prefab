@@ -471,7 +471,7 @@ Transform:
   m_GameObject: {fileID: 4305346197092756552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.200869, y: 1.0418522, z: -1.4048071}
-  m_LocalScale: {x: 3.4112935, y: 2.7479868, z: 3.7903264}
+  m_LocalScale: {x: 3.4112935, y: 2.9980536, z: 3.7903264}
   m_Children:
   - {fileID: 4305346197234288752}
   m_Father: {fileID: 0}
@@ -623,7 +623,7 @@ MonoBehaviour:
   Message: {fileID: 1862056455}
   PlayerStorage: {fileID: 11400000, guid: b85db5334182966458e20c871e2a6e59, type: 2}
   position: {x: 0, y: 0, z: 0}
-  m_SceneName: First_level
+  m_SceneName: SampleScene
   spaceHoldingTime: 0
   time: 0
   Key: {fileID: 0}

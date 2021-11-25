@@ -22,7 +22,6 @@ public class PlayerData
         Stamina = player.Stamina;
         key1 = player.key1;
         SceneIndex = player.SceneIndex;
-        Debug.LogError("now scene: " + SceneIndex);
 
         position = new float[3];
         position[0] = player.transform.position.x;

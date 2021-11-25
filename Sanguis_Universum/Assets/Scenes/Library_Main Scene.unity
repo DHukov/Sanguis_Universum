@@ -9980,7 +9980,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4305346197092756549, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4305346197092756549, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10030,10 +10030,6 @@ PrefabInstance:
       propertyPath: Key
       value: 
       objectReference: {fileID: 1377415226}
-    - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: m_SceneName
-      value: SampleScene
-      objectReference: {fileID: 0}
     - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
       propertyPath: LoadUnit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -22363,7 +22359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8536996427728944132, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8536996427728944132, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
       propertyPath: m_LocalPosition.x
