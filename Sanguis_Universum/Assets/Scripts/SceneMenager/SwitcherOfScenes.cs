@@ -29,7 +29,7 @@ public class SwitcherOfScenes : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-            LoadUnit.Invoke();
+            //LoadUnit.Invoke();
     }
 
     public void IsOpened(GameObject obj)
@@ -59,7 +59,6 @@ public class SwitcherOfScenes : MonoBehaviour
         if (isOpened)
         {
             SaveUnit.Invoke();
-            
             StartCoroutine(LoadScene());
             //Invoke("LoadUnit", 2);
         }

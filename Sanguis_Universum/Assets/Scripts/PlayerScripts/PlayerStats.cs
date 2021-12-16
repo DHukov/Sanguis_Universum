@@ -20,21 +20,25 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        LoadPlayerPosition();
-    }
 
+        //LoadPlayerPosition();
+    }
     public void Update()
     {
         HealAndDamage(); // simple function for test of mechanic
         if (Input.GetKeyUp(KeyCode.L))
         {
-            //LoadAll();
             //StartCoroutine(LoadSceneCouratine());
-            //LoadScene();
+
+            //LoadAll();
+            LoadScene();
+            //StartCoroutine(LoadSceneCouratine());
+            //LoadPlayerPosition();
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
             SavePlayer();
+            Debug.Log("Saves done");
         }
         if (dead && Input.GetKeyDown(KeyCode.Space))
         {
@@ -59,7 +63,8 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadAll()
     {
-        //LoadScene();
+        //StartCoroutine(LoadSceneCouratine());
+        //LoadPlayerPosition();
         //LoadPlayerPosition();
         LoadPlayerStats();
         DeadScreen.SetActive(false);
@@ -105,34 +110,47 @@ public class PlayerStats : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
+        Debug.LogError("Position");
     }
     IEnumerator LoadSceneCouratine()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        //SceneManager.LoadScene(data.SceneIndex);
         AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync(data.SceneIndex);
-
-        //anim.SetTrigger("FadeOut");
         while (!AsyncLoad.isDone)
         {
-            //Debug.LogError("done");
-
             //LoadPlayerPosition();
-            Debug.LogError("done");
+
+
+
+
             yield return null;
         }
     }
-    /*public void LoadScene()
+    /*
+    */
+    public void LoadScene()
     {
         PlayerData data = SaveSystem.LoadPlayer();
         SceneManager.LoadScene(data.SceneIndex);
+        Debug.LogError(SceneIndex + " done");
 
-        if(SceneIndex == data.SceneIndex)
+        if (SceneIndex == data.SceneIndex)
         {
-            LoadPlayerPosition();
+        Debug.LogError("Position");
+            //LoadPlayerPosition();
+
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            transform.position = position;
+
+
+            Debug.LogError(position.x);
+            Debug.LogError(position.y);
+            Debug.LogError(position.z);
         }
     }
-    */
     public void LoadPlayerStats()
     {
         PlayerData data = SaveSystem.LoadPlayer();
@@ -156,8 +174,8 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Door has been opened...");
         }
     }
-
-    void OnEnable()
+    /*
+    void lOAD_sCENE()
     {
         PlayerData data = SaveSystem.LoadPlayer();
         //SceneManager.LoadScene(data.SceneIndex);
@@ -171,5 +189,5 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
     }
-
+    */
 }

@@ -623,13 +623,13 @@ MonoBehaviour:
   Message: {fileID: 1862056455}
   PlayerStorage: {fileID: 11400000, guid: b85db5334182966458e20c871e2a6e59, type: 2}
   position: {x: 0, y: 0, z: 0}
-  m_SceneName: SampleScene
+  m_SceneName: Library_Main Scene
   spaceHoldingTime: 0
   time: 0
   Key: {fileID: 0}
   KeyToScene: 101
   anim: {fileID: 4305346197234288750}
-  isOpened: 0
+  isOpened: 1
   SaveUnit:
     m_PersistentCalls:
       m_Calls:
@@ -650,7 +650,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: LoadPlayerStats
+        m_MethodName: LoadAll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
