@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &82602463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551839964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 9.29, z: -20.516024}
+  m_LocalPosition: {x: 18.48, y: 4.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -875,7 +875,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1194727105}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b9ab98810a4acc4fbe35ace5a084d7e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -938,7 +938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 551839965}
-  speed: 300
+  speed: 1.8
+  jumpVelocity: 22
+  jumpCooldown: 1.87
   nextWayPointDistance: 3
 --- !u!1 &1248559788
 GameObject:
@@ -1170,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1447391676
 Rigidbody2D:
   serializedVersion: 4
@@ -1618,7 +1620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &2099021426
 Rigidbody2D:
   serializedVersion: 4

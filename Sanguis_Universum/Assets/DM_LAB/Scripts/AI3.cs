@@ -6,12 +6,14 @@ using Pathfinding;
 public class AI3 : MonoBehaviour
 {
     public Transform target;
+    [Range(0.5f, 5f)] public float speed = 1f;
+    [Range(0.5f, 50f)] public float jumpVelocity = 10f;
+    [Range(0.5f, 5f)] public float jumpCooldown = 2f;
+    float lastJumpTime;
 
-    public float speed = 300f;
     public float nextWayPointDistance = 3f;
-
     Path path;
-    int currentWaypoint = 0;
+    int currentWaypoint;
     bool reachedEndOfPath = false;
 
     Seeker seeker;
@@ -21,8 +23,7 @@ public class AI3 : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
 
     void UpdatePath()
@@ -36,8 +37,14 @@ public class AI3 : MonoBehaviour
         if (!p.error)
         {
             path = p;
-            currentWaypoint = 0;
+            RecalculateCurrentWaypoint();
         }
+    }
+
+    void RecalculateCurrentWaypoint()
+    {
+        currentWaypoint = 0;
+        UpdateWaypointIfFarEnough();
     }
 
     void FixedUpdate()
@@ -45,40 +52,64 @@ public class AI3 : MonoBehaviour
         if (path == null)
             return;
 
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
+        reachedEndOfPath = (currentWaypoint >= path.vectorPath.Count);
+        if (reachedEndOfPath)
             return;
-        }
+
+        UpdateWaypointIfFarEnough();
+
+        var direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        UsePhysicsToGoThere(direction);
+    }
+
+    void UsePhysicsToGoThere(Vector2 direction)
+    {
+        if (direction.x > 0)
+            LookRight();
         else
+            LookLeft();
+
+
+        var oldVelocity = rb.velocity;
+        var newVelocity = oldVelocity;
+        newVelocity.x = direction.x * speed;
+
+        if (oldVelocity.y == 0 && direction.y > 0.5 && IsReadyToJump())
         {
-            reachedEndOfPath = false;
+            newVelocity.y = jumpVelocity;
+            lastJumpTime = Time.realtimeSinceStartup;
         }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        /*
-        if (direction >= (-1).normalized)
-        {
-            rb.AddForce(new Vector2(0f, 10f));
-        }
-        */
-        Vector2 force = direction * speed * Time.deltaTime;
-        rb.AddForce(force);
+        rb.velocity = newVelocity;
+    }
 
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+    bool IsReadyToJump()
+    {
+        return Time.realtimeSinceStartup - lastJumpTime > jumpCooldown;
+    }
 
+    void LookLeft()
+    {
+        transform.localScale = new Vector3(-1, 1, 1f);
+    }
+
+    void LookRight()
+    {
+        transform.localScale = new Vector3(1, 1, 1f);
+    }
+
+    bool UpdateWaypointIfFarEnough()
+    {
+        var waypoints = path.vectorPath.Count;
+        if (currentWaypoint == waypoints - 1)
+            return false;
+        var distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWayPointDistance)
         {
             currentWaypoint++;
+            return true;
         }
 
-        if (rb.velocity.x >= 0.01f)
-        {
-            transform.localScale = new Vector3(1, 1, 1f);
-        }
-        else if (rb.velocity.x <= 0.01f)
-        {
-            transform.localScale = new Vector3(-1, 1, 1f);
-        }
+        return false;
     }
 }
