@@ -20,15 +20,19 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        LoadPlayerPosition();
     }
 
     public void Update()
     {
         HealAndDamage(); // simple function for test of mechanic
+        SavesLoad();
+    }
+
+    private void SavesLoad()
+    {
         if (Input.GetKeyUp(KeyCode.L))
         {
-            //LoadAll();
+            LoadAll();
             //StartCoroutine(LoadSceneCouratine());
             //LoadScene();
         }
@@ -38,14 +42,16 @@ public class PlayerStats : MonoBehaviour
         }
         if (dead && Input.GetKeyDown(KeyCode.Space))
         {
-
+            dead = true;
+            LoadAll();
         }
     }
+
     public void Dead()
     {
         Time.timeScale = 0f;
         DeadScreen.SetActive(dead);
-        Debug.LogError(dead); 
+        Debug.LogError(dead);
     }
     public void Damage(int DamageAmount) // Player take damage and cannot have HP belove 0
     {
@@ -59,7 +65,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadAll()
     {
-        //LoadScene();
+        StartCoroutine(LoadScene());
         //LoadPlayerPosition();
         LoadPlayerStats();
         DeadScreen.SetActive(false);
@@ -70,14 +76,14 @@ public class PlayerStats : MonoBehaviour
         this.MaxHealth = MaxHealth;
         Health = MaxHealth;
     }
-    public int GetHealth()  {    return Health;    }    
+    public int GetHealth() { return Health; }
     public void Heal(int HealAmount) // Player take heal and cannot have HP more than 100
     {
         Health += HealAmount;
         if (Health >= MaxHealth)
             Health = MaxHealth;
     }
-    
+
     public void HealAndDamage()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -97,8 +103,9 @@ public class PlayerStats : MonoBehaviour
         SaveSystem.SavePlayer(this);
     }
 
-    public void LoadPlayerPosition()   
-    {  
+    public void LoadPlayerPosition()
+    {
+        Debug.LogError("Position");
         PlayerData data = SaveSystem.LoadPlayer();
         Vector3 position;
         position.x = data.position[0];
@@ -106,23 +113,18 @@ public class PlayerStats : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
     }
-    IEnumerator LoadSceneCouratine()
+
+    IEnumerator LoadScene()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        //SceneManager.LoadScene(data.SceneIndex);
         AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync(data.SceneIndex);
-
-        //anim.SetTrigger("FadeOut");
         while (!AsyncLoad.isDone)
         {
-            //Debug.LogError("done");
-
-            //LoadPlayerPosition();
-            Debug.LogError("done");
             yield return null;
         }
     }
-    /*public void LoadScene()
+    /*
+        public void LoadScene()
     {
         PlayerData data = SaveSystem.LoadPlayer();
         SceneManager.LoadScene(data.SceneIndex);
@@ -135,12 +137,14 @@ public class PlayerStats : MonoBehaviour
     */
     public void LoadPlayerStats()
     {
+        Debug.LogError("Stats");
+
         PlayerData data = SaveSystem.LoadPlayer();
         Health = data.Health;
         Stamina = data.Stamina;
         MaxHealth = data.MaxHealth;
     }
-   
+
     public void PickUpKey1()
     {
         if (!key1)
@@ -156,20 +160,6 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Door has been opened...");
         }
     }
-
-    void OnEnable()
-    {
-        PlayerData data = SaveSystem.LoadPlayer();
-        //SceneManager.LoadScene(data.SceneIndex);
-        AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync(data.SceneIndex);
-
-        Debug.Log("OnEnable called");
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
-    }
-
 }
+
+    

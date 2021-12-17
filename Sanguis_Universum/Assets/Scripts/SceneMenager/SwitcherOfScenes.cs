@@ -8,8 +8,8 @@ using UnityEngine;
 public class SwitcherOfScenes : MonoBehaviour
 {
     public GameObject Message;
-    public VectorValue PlayerStorage;
-    public Vector3 position;
+    //public VectorValue PlayerStorage;
+    //public Vector3 position;
     [SerializeField] string m_SceneName;
     public float spaceHoldingTime = 0;
     [SerializeField] float time;

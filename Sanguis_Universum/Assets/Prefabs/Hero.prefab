@@ -443,7 +443,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b9ab98810a4acc4fbe35ace5a084d7e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
@@ -649,9 +649,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadScreen: {fileID: 0}
-  Health: 30
+  Health: 0
   Stamina: 0
-  MaxHealth: 0
+  MaxHealth: 100
   dead: 0
   key1: 0
   key1Used: 0
