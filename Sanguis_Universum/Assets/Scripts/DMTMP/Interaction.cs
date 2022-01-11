@@ -9,13 +9,13 @@ public class Interaction : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
-
-    void Start()
-    {
-        
-    }
-
     void Update()
+    {
+        HideButton();
+    }
+    
+
+    private void HideButton()
     {
         if (isInRange)
         {
@@ -26,6 +26,8 @@ public class Interaction : MonoBehaviour
             }
         }
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

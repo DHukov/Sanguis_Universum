@@ -137,7 +137,7 @@ public class PlayerStats : MonoBehaviour
     */
     public void LoadPlayerStats()
     {
-        Debug.LogError("Stats");
+        //Debug.LogError("Stats");
 
         PlayerData data = SaveSystem.LoadPlayer();
         Health = data.Health;
@@ -160,6 +160,7 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Door has been opened...");
         }
     }
+    
 }
 
     

@@ -6,14 +6,17 @@ public class Hiding : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject enemy;
-   // [SerializeField] GameObject collider;
+    // [SerializeField] GameObject collider;
 
-
-    bool hiding;
+    public bool hiding;
     float speedTmp;
     float jumpTmp;
+
+ 
+
     public void Hide()
     {
+
         if (hiding == false)
         {
             hiding = true;
@@ -35,17 +38,22 @@ public class Hiding : MonoBehaviour
         }
         else
         {
-            hiding = false;
-            player.GetComponent<CharController>().runSpeed = speedTmp;
-            player.GetComponent<CharController>().m_JumpForce = jumpTmp;
-
-            player.GetComponent<Rigidbody2D>().gravityScale = 2;
-            player.GetComponent<BoxCollider2D>().isTrigger = false;
-            player.GetComponent<CapsuleCollider2D>().isTrigger = false;
-            player.GetComponent<SpriteRenderer>().enabled = true;
-
-            enemy.GetComponent<EnemyAI>().followEnabled = true;
+            NotHiding();
             //enemy.GetComponent<Rigidbody2D>().gravityScale = 2;
         }
+    }
+
+    public void NotHiding()
+    {
+        hiding = false;
+        player.GetComponent<CharController>().runSpeed = speedTmp;
+        player.GetComponent<CharController>().m_JumpForce = jumpTmp;
+
+        player.GetComponent<Rigidbody2D>().gravityScale = 2;
+        player.GetComponent<BoxCollider2D>().isTrigger = false;
+        player.GetComponent<CapsuleCollider2D>().isTrigger = false;
+        player.GetComponent<SpriteRenderer>().enabled = true;
+
+        enemy.GetComponent<EnemyAI>().followEnabled = true;
     }
 }
