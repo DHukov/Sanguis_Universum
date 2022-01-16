@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SilenceMechanik : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject Text;
 
+    bool CatchTheTime;
     public int MaxClicks;
     public float TimeForDo;
     public float WasteTime;
@@ -13,28 +15,49 @@ public class SilenceMechanik : MonoBehaviour
 
     void Update()
     {
-        
         OneClick();
     }
 
     void OneClick()
     {
-        if(player.GetComponent<Hiding>().hiding == true)
+        if (Player.GetComponent<Hiding>().hiding == true)
         {
             TimeForDo -= Time.deltaTime;
-            //Debug.Log(WasteTime);
-            if (Input.GetKeyDown(KeyCode.Space) || TimeForDo <= 0 )
+            this.GetComponent<Interaction>().enabled = false;
+            Text.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 add_list.Add(1);
                 Debug.LogError("mouse");
-                if (add_list[MaxClicks] <= MaxClicks)
-                {
-                    add_list.Clear();
-                    player.GetComponent<Hiding>().NotHiding();
-                    TimeForDo = 2;
-                }
+            }
+            if (TimeForDo <= 0 && CatchTheTime == false)
+            {
+                Player.GetComponent<Hiding>().NotHiding();
+            }
+            else if(add_list[MaxClicks] <= MaxClicks)
+            {
+                CatchTheTime = true;
+                //add_list.Clear();
+                PressOneMore();
             }
         }
+        else
+            ParametresNotHid();
     }
-
+    void ParametresNotHid()
+    {
+        CatchTheTime = false;
+        Text.SetActive(false);
+        this.GetComponent<Interaction>().enabled = true;
+        add_list.Clear();
+        TimeForDo = 2;
+    }
+    void PressOneMore()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Player.GetComponent<Hiding>().NotHiding();
+        }
+    }
 }
