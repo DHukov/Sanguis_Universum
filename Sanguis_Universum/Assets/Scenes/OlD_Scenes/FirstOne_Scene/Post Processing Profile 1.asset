@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.1
     min: 0
     max: 1
 --- !u!114 &-2381015074318055595
@@ -123,10 +123,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: -2.39
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: -50
+    m_Value: -27
     min: -100
     max: 100
   colorFilter:

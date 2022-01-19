@@ -560,7 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Text: {fileID: 0}
+  Press_Button: {fileID: 0}
+  SafetyText: {fileID: 0}
   MaxClicks: 10
   TimeForDo: 2
   WasteTime: 0

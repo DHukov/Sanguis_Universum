@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &401670375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1911812976180363506, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
+  m_PrefabInstance: {fileID: 634062139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &444658401 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8506614943050049811, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
@@ -349,6 +354,54 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2145917756, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
   m_PrefabInstance: {fileID: 634062139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &817951283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817951285}
+  - component: {fileID: 817951284}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &817951284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817951283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 0051ca6183847d94d84365cbbabb194a, type: 2}
+--- !u!4 &817951285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817951283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094852425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8536996427728944136, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
@@ -384,13 +437,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
-      propertyPath: Text
-      value: 
-      objectReference: {fileID: 444658401}
-    - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1094852425}
+    - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
+      propertyPath: SafetyText
+      value: 
+      objectReference: {fileID: 401670375}
+    - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
+      propertyPath: Press_Button
+      value: 
+      objectReference: {fileID: 444658401}
     - target: {fileID: 71722715198404602, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: m_Name
       value: TableH
