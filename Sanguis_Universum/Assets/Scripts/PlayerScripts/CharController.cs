@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.ComponentModel.Design.Serialization;
+using Random = UnityEngine.Random;
+using UnityEngine.Audio;
 //using UnityEngine.Rendering.PostProcessing;
 
 public class CharController : MonoBehaviour
 {
 
     public Animator animator;
+
+    private AudioSource audioJump;
+    public AudioClip clipJump;
+    private AudioSource audioLand;
+    public AudioClip clipLand;
+    private AudioSource audioFootsteps;
+    public AudioClip[] clipWalkArray;
+    private int clipRandomize;
 
     public Transform GroundCheck;
     public LayerMask m_WhatIsGround;
@@ -56,6 +67,7 @@ public class CharController : MonoBehaviour
         if (OnLandEvent == null)
         {
             OnLandEvent = new UnityEvent();
+            audioLand.PlayOneShot(clipLand);
         }
 
         if (OnCrouchEvent == null)
@@ -121,12 +133,16 @@ public class CharController : MonoBehaviour
             {
 
                 Flip();
+                clipRandomize = Random.Range(0, clipWalkArray.Length);
+                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
             }
 
             else if (move < 0 && m_FacingRight)
             {
 
                 Flip();
+                clipRandomize = Random.Range(0, clipWalkArray.Length);
+                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
             }
         }
 
@@ -134,7 +150,7 @@ public class CharController : MonoBehaviour
         {
 
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * 100));
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * 100));           
 
         }
     }
@@ -161,6 +177,7 @@ public class CharController : MonoBehaviour
         {
             jump = true;
             animator.SetTrigger("JumpStart");
+            audioJump.PlayOneShot(clipJump);
 
         }
 
@@ -197,6 +214,7 @@ public class CharController : MonoBehaviour
     {
 
         animator.SetTrigger("Landing");
+        //audioLand.PlayOneShot(clipLand);
     }
 
     public void OnCrouching (bool isCrouching)

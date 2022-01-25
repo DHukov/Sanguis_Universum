@@ -503,6 +503,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8536996427728944138}
+  clipJump: {fileID: 8300000, guid: e2edd5db78b1e984695c4b870be284c4, type: 3}
+  clipLand: {fileID: 8300000, guid: 8aa640e0b9abbd94fb728d158c73c69c, type: 3}
+  clipWalkArray:
+  - {fileID: 8300000, guid: bd6785a5ff5f3a44dbf000b0a1f1a361, type: 3}
+  - {fileID: 8300000, guid: 1e6aab26059c33644a7ae831f7797d4d, type: 3}
+  - {fileID: 8300000, guid: 8754c9453dd00754e80e04723668ea49, type: 3}
+  - {fileID: 8300000, guid: 36ddf0e6666a8754b9ea9a346c4a58d6, type: 3}
+  - {fileID: 8300000, guid: 948f722a18b323c48bc52c28383a294c, type: 3}
   GroundCheck: {fileID: 7987182165465647400}
   m_WhatIsGround:
     serializedVersion: 2
@@ -619,6 +627,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  clipAttack: {fileID: 8300000, guid: adc3eebac0ba7134d9345ccda3fa456c, type: 3}
   attackDistance: 1
   attackStr: 30
   attackSpeed: 2
@@ -636,6 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8536996427728944136}
   enemy: {fileID: 0}
+  hiding: 0
 --- !u!114 &196594892
 MonoBehaviour:
   m_ObjectHideFlags: 0

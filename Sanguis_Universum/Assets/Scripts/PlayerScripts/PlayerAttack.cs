@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.ComponentModel.Design.Serialization;
+using Random = UnityEngine.Random;
+using UnityEngine.Audio;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
     public Transform AttackProbe;
     public LayerMask enemyLayers;
+    private AudioSource audioAttack;
+    public AudioClip clipAttack;
 
     public float attackDistance = 0.5f;
     public int attackStr = 30;
@@ -32,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+        audioAttack.PlayOneShot(clipAttack);
 
         Collider2D[] enemyDamage = Physics2D.OverlapCircleAll(AttackProbe.position, attackDistance, enemyLayers);
 
