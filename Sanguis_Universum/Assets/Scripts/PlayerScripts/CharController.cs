@@ -12,10 +12,10 @@ public class CharController : MonoBehaviour
 
     public Animator animator;
 
-    private AudioSource audioJump;
-    public AudioClip clipJump;
-    private AudioSource audioLand;
-    public AudioClip clipLand;
+    [SerializeField] AudioSource audioJump;
+    //public AudioClip clipJump;
+    [SerializeField] AudioSource audioLand;
+    //public AudioClip clipLand;
     private AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
@@ -67,7 +67,7 @@ public class CharController : MonoBehaviour
         if (OnLandEvent == null)
         {
             OnLandEvent = new UnityEvent();
-            audioLand.PlayOneShot(clipLand);
+            //audioLand.Play();
         }
 
         if (OnCrouchEvent == null)
@@ -133,16 +133,16 @@ public class CharController : MonoBehaviour
             {
 
                 Flip();
-                clipRandomize = Random.Range(0, clipWalkArray.Length);
-                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
+                /*clipRandomize = Random.Range(0, clipWalkArray.Length);
+                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);*/
             }
 
             else if (move < 0 && m_FacingRight)
             {
 
                 Flip();
-                clipRandomize = Random.Range(0, clipWalkArray.Length);
-                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
+                /*clipRandomize = Random.Range(0, clipWalkArray.Length);
+                audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);*/
             }
         }
 
@@ -172,12 +172,18 @@ public class CharController : MonoBehaviour
         h_Move = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(h_Move));
+        
+        if(m_Grounded && Input.GetAxis("Horizontal")!=0)
+        {
+            clipRandomize = Random.Range(0, clipWalkArray.Length);
+            audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetTrigger("JumpStart");
-            audioJump.PlayOneShot(clipJump);
+            audioJump.Play();
 
         }
 
@@ -214,7 +220,7 @@ public class CharController : MonoBehaviour
     {
 
         animator.SetTrigger("Landing");
-        //audioLand.PlayOneShot(clipLand);
+        //audioLand.Play();
     }
 
     public void OnCrouching (bool isCrouching)

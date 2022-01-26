@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2808527, g: 0.3660275, b: 0.4983291, a: 1}
+  m_IndirectSpecularColor: {r: 0.27938733, g: 0.36184454, b: 0.4799132, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1519014108852356526, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102266724764472113, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588626662459047525, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8536996427728944132, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -174,6 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8536996427728944133, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: audioLand
+      value: 
+      objectReference: {fileID: 191950136}
     - target: {fileID: 8536996427728944136, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -196,6 +212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f00ff0be5d39494bab763016a97a4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &191950136 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2102266724764472113, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+  m_PrefabInstance: {fileID: 191950133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
