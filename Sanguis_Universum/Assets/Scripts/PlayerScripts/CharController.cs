@@ -16,7 +16,7 @@ public class CharController : MonoBehaviour
     //public AudioClip clipJump;
     [SerializeField] AudioSource audioLand;
     //public AudioClip clipLand;
-    public AudioSource audioFootsteps;
+    [SerializeField] AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
     public AudioListener audioListener;
