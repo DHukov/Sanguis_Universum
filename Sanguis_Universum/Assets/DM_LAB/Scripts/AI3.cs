@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class AI3 : MonoBehaviour
 {
+    public Animator animator;
     public Transform target;
     [Range(0.5f, 5f)] public float speed = 1f;
     [Range(0.5f, 50f)] public float jumpVelocity = 10f;
@@ -81,6 +82,9 @@ public class AI3 : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
+
+        //Animation speed
+        animator.SetFloat("Speed", Mathf.Abs(newVelocity.x));
     }
 
     bool IsReadyToJump()
@@ -90,12 +94,12 @@ public class AI3 : MonoBehaviour
 
     void LookLeft()
     {
-        transform.localScale = new Vector3(-1, 1, 1f);
+        transform.localScale = new Vector3(1, 1, 1f);
     }
 
     void LookRight()
     {
-        transform.localScale = new Vector3(1, 1, 1f);
+        transform.localScale = new Vector3(-1, 1, 1f);
     }
 
     bool UpdateWaypointIfFarEnough()
