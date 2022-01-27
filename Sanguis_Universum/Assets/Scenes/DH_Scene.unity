@@ -465,10 +465,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TableH
       objectReference: {fileID: 0}
-    - target: {fileID: 71722715198404602, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 71722715198404603, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: m_RootOrder
       value: 1

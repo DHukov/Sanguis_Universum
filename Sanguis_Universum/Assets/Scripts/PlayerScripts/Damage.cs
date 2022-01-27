@@ -5,13 +5,28 @@ using UnityEngine.Events;
 public class Damage : MonoBehaviour
 {
     public UnityEvent damage;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public GameObject Player;
+    public Animator animator;
+
+    public float DistanceBetween_PlayerAndEnemy;
+    public float Atack_Distance;
+
+    private float Distance;
+    public void Update()
     {
-        if (collision.CompareTag("Enemy"))
+        Distance = Vector3.Distance(gameObject.transform.position, Player.transform.position);
+        //Debug.Log(Distance + "metres");
+
+        if (Atack_Distance <= Distance)
         {
-            //HasPlayer = true;
-        damage.Invoke();
+            animator.SetTrigger("Atack");
+            Debug.Log("Anim");
         }
-        //Debug.LogError("you are in area ");
+
+        if (Distance <= DistanceBetween_PlayerAndEnemy)
+        {
+            damage.Invoke();
+            Debug.Log(damage);
+        }
     }
 }

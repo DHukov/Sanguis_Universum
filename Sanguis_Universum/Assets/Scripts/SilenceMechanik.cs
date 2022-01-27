@@ -5,8 +5,8 @@ using UnityEngine;
 public class SilenceMechanik : MonoBehaviour
 {
     [SerializeField] GameObject Player;
-    [SerializeField] GameObject Press_Button;
-    [SerializeField] GameObject SafetyText;
+    //[SerializeField] GameObject Press_Button;
+    //[SerializeField] GameObject SafetyText;
 
     bool CatchTheTime;
     public int MaxClicks;
@@ -26,9 +26,9 @@ public class SilenceMechanik : MonoBehaviour
         {
             TimeForDo -= Time.deltaTime;
             this.GetComponent<Interaction>().enabled = false;
-            Press_Button.SetActive(true);
+           //Press_Button.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 add_list.Add(1);
                 Debug.LogError("mouse");
@@ -50,16 +50,16 @@ public class SilenceMechanik : MonoBehaviour
     void ParametresNotHid()
     {
         CatchTheTime = false;
-        SafetyText.SetActive(false);
-        Press_Button.SetActive(false);
+        //SafetyText.SetActive(false);
+        //Press_Button.SetActive(false);
         this.GetComponent<Interaction>().enabled = true;
         add_list.Clear();
         TimeForDo = 2;
     }
     void PressOneMore()
     {
-        Press_Button.SetActive(false);
-        SafetyText.SetActive(true);
+        //Press_Button.SetActive(false);
+        //SafetyText.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
             Player.GetComponent<Hiding>().NotHiding();
