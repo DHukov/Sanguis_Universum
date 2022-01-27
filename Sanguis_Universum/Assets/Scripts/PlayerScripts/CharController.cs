@@ -19,6 +19,7 @@ public class CharController : MonoBehaviour
     private AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
+    public AudioListener audioListener;
 
     public Transform GroundCheck;
     public LayerMask m_WhatIsGround;
@@ -177,6 +178,7 @@ public class CharController : MonoBehaviour
         {
             clipRandomize = Random.Range(0, clipWalkArray.Length);
             audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
+            
         }
 
         if (Input.GetButtonDown("Jump"))

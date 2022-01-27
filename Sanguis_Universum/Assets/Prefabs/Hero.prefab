@@ -513,6 +513,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8754c9453dd00754e80e04723668ea49, type: 3}
   - {fileID: 8300000, guid: 36ddf0e6666a8754b9ea9a346c4a58d6, type: 3}
   - {fileID: 8300000, guid: 948f722a18b323c48bc52c28383a294c, type: 3}
+  audioListener: {fileID: 3588626662459047525}
   GroundCheck: {fileID: 7987182165465647400}
   m_WhatIsGround:
     serializedVersion: 2
