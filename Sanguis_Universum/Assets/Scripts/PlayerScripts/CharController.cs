@@ -16,7 +16,7 @@ public class CharController : MonoBehaviour
     //public AudioClip clipJump;
     [SerializeField] AudioSource audioLand;
     //public AudioClip clipLand;
-    private AudioSource audioFootsteps;
+    public AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
     public AudioListener audioListener;
@@ -68,7 +68,7 @@ public class CharController : MonoBehaviour
         if (OnLandEvent == null)
         {
             OnLandEvent = new UnityEvent();
-            //audioLand.Play();
+            audioLand.Play();
         }
 
         if (OnCrouchEvent == null)

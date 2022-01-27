@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_Enemy_Idle_1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 7363ea844dc684d44b742e495c7e7f6a, type: 3}
+    - {fileID: 2800000, guid: f3d7a1e0558e6fc4db717804c01ed0e9, type: 3}
+    - {fileID: 2800000, guid: e1d8c643226971641bef0b81b8419099, type: 3}
+    - {fileID: 2800000, guid: 600e4bfcb2c1ed74a9cfd7b3dd410eb0, type: 3}
+    - {fileID: 2800000, guid: 9120977c64c44ad418dd0c1455e405c1, type: 3}
+    - {fileID: 2800000, guid: f53565ec691c70d42bca4f1c6b03b349, type: 3}
+    - {fileID: 2800000, guid: 5ac7f4b814752034aa037140e6b4768c, type: 3}
+    - {fileID: 2800000, guid: 671a443f6d02115469e95ff327d86d0d, type: 3}
+    - {fileID: 2800000, guid: b03e59a32ccc8c740a90b1751e8f7ed8, type: 3}
+    - {fileID: 2800000, guid: 2a383696af235a44eb6ddbfda5907feb, type: 3}
+    - {fileID: 2800000, guid: a9fb10fea75a145448b89379896cb782, type: 3}
+    - {fileID: 2800000, guid: 2456f6f105687ec46b80cc772564a0db, type: 3}
+    - {fileID: 2800000, guid: 6d873efd334248942bacdaa7480040db, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f3d7a1e0558e6fc4db717804c01ed0e9, type: 3}
+  - {fileID: 21300000, guid: 2456f6f105687ec46b80cc772564a0db, type: 3}
+  - {fileID: 21300000, guid: e1d8c643226971641bef0b81b8419099, type: 3}
+  - {fileID: 21300000, guid: b03e59a32ccc8c740a90b1751e8f7ed8, type: 3}
+  - {fileID: 21300000, guid: 7363ea844dc684d44b742e495c7e7f6a, type: 3}
+  - {fileID: 21300000, guid: 2a383696af235a44eb6ddbfda5907feb, type: 3}
+  - {fileID: 21300000, guid: 5ac7f4b814752034aa037140e6b4768c, type: 3}
+  - {fileID: 21300000, guid: 9120977c64c44ad418dd0c1455e405c1, type: 3}
+  - {fileID: 21300000, guid: f53565ec691c70d42bca4f1c6b03b349, type: 3}
+  - {fileID: 21300000, guid: 600e4bfcb2c1ed74a9cfd7b3dd410eb0, type: 3}
+  - {fileID: 21300000, guid: 6d873efd334248942bacdaa7480040db, type: 3}
+  - {fileID: 21300000, guid: a9fb10fea75a145448b89379896cb782, type: 3}
+  - {fileID: 21300000, guid: 671a443f6d02115469e95ff327d86d0d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "Potw\xF3r_1-Potw\xF3r-animation_01"
+  - "Potw\xF3r_1-Potw\xF3r-animation_11"
+  - "Potw\xF3r_1-Potw\xF3r-animation_02"
+  - "Potw\xF3r_1-Potw\xF3r-animation_08"
+  - "Potw\xF3r_1-Potw\xF3r-animation_00"
+  - "Potw\xF3r_1-Potw\xF3r-animation_09"
+  - "Potw\xF3r_1-Potw\xF3r-animation_06"
+  - "Potw\xF3r_1-Potw\xF3r-animation_04"
+  - "Potw\xF3r_1-Potw\xF3r-animation_05"
+  - "Potw\xF3r_1-Potw\xF3r-animation_03"
+  - "Potw\xF3r_1-Potw\xF3r-animation_12"
+  - "Potw\xF3r_1-Potw\xF3r-animation_10"
+  - "Potw\xF3r_1-Potw\xF3r-animation_07"
+  m_RenderDataMap: {}
+  m_Tag: Atlas_Enemy_Idle_1
+  m_IsVariant: 0

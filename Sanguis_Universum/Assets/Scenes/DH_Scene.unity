@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: door
       objectReference: {fileID: 0}
+    - target: {fileID: 4305346197092756552, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
       propertyPath: Key
       value: 
@@ -347,6 +351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 6006727582894133163, guid: ec8aa9821e2d95142a5c64203939bad7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec8aa9821e2d95142a5c64203939bad7, type: 3}
 --- !u!1 &781579634 stripped
@@ -429,6 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e91ca3992777c498952e5f8b0a8c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1094852429 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1519014108852356526, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+  m_PrefabInstance: {fileID: 1903984497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1491813831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451,6 +464,10 @@ PrefabInstance:
     - target: {fileID: 71722715198404602, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: m_Name
       value: TableH
+      objectReference: {fileID: 0}
+    - target: {fileID: 71722715198404602, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 71722715198404603, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: m_RootOrder
@@ -688,6 +705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 7779424146478621085, guid: a26f122932eda034b98285825cb09e83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7779424146478621087, guid: a26f122932eda034b98285825cb09e83, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -793,9 +814,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8536996427728944133, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: audioLand
+      value: 
+      objectReference: {fileID: 1094852429}
+    - target: {fileID: 8536996427728944133, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: audioFootsteps
+      value: 
+      objectReference: {fileID: 1094852429}
     - target: {fileID: 8536996427728944136, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8536996427728944136, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1808893837, guid: b8ec862f0b010f3428d28f03de954904, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b8ec862f0b010f3428d28f03de954904, type: 3}

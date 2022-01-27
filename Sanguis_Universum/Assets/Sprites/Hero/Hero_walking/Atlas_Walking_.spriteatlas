@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_Walking_
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 2337759cbeec7cc47822e57e72503a22, type: 3}
+    - {fileID: 2800000, guid: 35624a79c7d61b44fa0bb77d2dfb388d, type: 3}
+    - {fileID: 2800000, guid: 81b1cfa3da5dc3d4c88d72409dc3e756, type: 3}
+    - {fileID: 2800000, guid: bd6fc6d1e7d941244baba2fd9bfe2b50, type: 3}
+    - {fileID: 2800000, guid: 1b4c5869e18fe054394546cdc1487530, type: 3}
+    - {fileID: 2800000, guid: 22a883b3ef06c3746914ec130b31f1d5, type: 3}
+    - {fileID: 2800000, guid: 653b6de402899b84b99ce2172a5c01ef, type: 3}
+    - {fileID: 2800000, guid: 2e7493ca0b6a2934aa58b03c2f507e7c, type: 3}
+    - {fileID: 2800000, guid: c80b16cad120272449a5009ea52d8aee, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: bd6fc6d1e7d941244baba2fd9bfe2b50, type: 3}
+  - {fileID: 21300000, guid: 81b1cfa3da5dc3d4c88d72409dc3e756, type: 3}
+  - {fileID: 21300000, guid: 22a883b3ef06c3746914ec130b31f1d5, type: 3}
+  - {fileID: 21300000, guid: 653b6de402899b84b99ce2172a5c01ef, type: 3}
+  - {fileID: 21300000, guid: 1b4c5869e18fe054394546cdc1487530, type: 3}
+  - {fileID: 21300000, guid: 35624a79c7d61b44fa0bb77d2dfb388d, type: 3}
+  - {fileID: 21300000, guid: 2e7493ca0b6a2934aa58b03c2f507e7c, type: 3}
+  - {fileID: 21300000, guid: c80b16cad120272449a5009ea52d8aee, type: 3}
+  - {fileID: 21300000, guid: 2337759cbeec7cc47822e57e72503a22, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "Ruch zwyk\u0142y w prawo003"
+  - "Ruch zwyk\u0142y w prawo002"
+  - "Ruch zwyk\u0142y w prawo005"
+  - "Ruch zwyk\u0142y w prawo006"
+  - "Ruch zwyk\u0142y w prawo004"
+  - "Ruch zwyk\u0142y w prawo001"
+  - "Ruch zwyk\u0142y w prawo007"
+  - "Ruch zwyk\u0142y w prawo008"
+  - "Ruch zwyk\u0142y w prawo000"
+  m_RenderDataMap: {}
+  m_Tag: Atlas_Walking_
+  m_IsVariant: 0

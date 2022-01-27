@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_Idle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1f88237069b7153449f38781c07ff0b4, type: 3}
+    - {fileID: 2800000, guid: 7e2e96cbb6f926c4f85b18071728e0c7, type: 3}
+    - {fileID: 2800000, guid: 60f605e811b45a1419d8222e3cf1f37b, type: 3}
+    - {fileID: 2800000, guid: 39e957ee602477246a1a30fe4d0777c3, type: 3}
+    - {fileID: 2800000, guid: 1cd427385215e2b408ed5384e2b6cc5d, type: 3}
+    - {fileID: 2800000, guid: 91c3e365dee1cf040aae17ed68d5f0d4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1f88237069b7153449f38781c07ff0b4, type: 3}
+  - {fileID: 21300000, guid: 91c3e365dee1cf040aae17ed68d5f0d4, type: 3}
+  - {fileID: 21300000, guid: 1cd427385215e2b408ed5384e2b6cc5d, type: 3}
+  - {fileID: 21300000, guid: 60f605e811b45a1419d8222e3cf1f37b, type: 3}
+  - {fileID: 21300000, guid: 7e2e96cbb6f926c4f85b18071728e0c7, type: 3}
+  - {fileID: 21300000, guid: 39e957ee602477246a1a30fe4d0777c3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Stanie000
+  - Stanie005
+  - Stanie004
+  - Stanie002
+  - Stanie001
+  - Stanie003
+  m_RenderDataMap: {}
+  m_Tag: Atlas_Idle
+  m_IsVariant: 0

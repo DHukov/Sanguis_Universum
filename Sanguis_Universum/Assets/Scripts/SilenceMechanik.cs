@@ -8,10 +8,10 @@ public class SilenceMechanik : MonoBehaviour
     [SerializeField] GameObject Press_Button;
     [SerializeField] GameObject SafetyText;
 
-
     bool CatchTheTime;
     public int MaxClicks;
     public float TimeForDo;
+
     public float WasteTime;
     public List<int> add_list = new List<int>();
 
