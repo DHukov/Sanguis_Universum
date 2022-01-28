@@ -43,6 +43,9 @@ public class CharController : MonoBehaviour
     public float runSpeed = 40f;
     public float crouchSpeed = 5f;
 
+    private float lastStepTime;
+    public float step;
+
     public UnityEvent OnLandEvent;
     public VectorValue PlayerPosition;
 
@@ -167,21 +170,36 @@ public class CharController : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    /*
+    float lastStepTime;
+
+    void Update()
+        {
+
+    if (Time.realTimeSinceStartup > lastStepTime + 0.2f)
+            {
+    lastStepTime = Time.realtimeSinceStartup;
+
+    audioSource.PlayOneShoot(step)
+
+        */
+
 
     void Update()
     {
         h_Move = Input.GetAxisRaw("Horizontal") * runSpeed;
-
         animator.SetFloat("Speed", Mathf.Abs(h_Move));
         
         if(m_Grounded && Input.GetAxis("Horizontal")!=0)
         {
             clipRandomize = Random.Range(0, clipWalkArray.Length);
-            //audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
             audioFootsteps.clip = clipWalkArray[clipRandomize];
-            audioFootsteps.Play();
 
-
+            if (Time.realtimeSinceStartup > lastStepTime + step)
+            {
+                lastStepTime = Time.realtimeSinceStartup;
+                audioFootsteps.PlayOneShot(audioFootsteps.clip, 1f);
+            }
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -190,7 +208,6 @@ public class CharController : MonoBehaviour
             animator.SetTrigger("JumpStart");
             audioJump.clip = clipJump;
             audioJump.Play();
-
         }
 
         if (Mathf.Abs(h_Move) > 0 || !m_Grounded)
