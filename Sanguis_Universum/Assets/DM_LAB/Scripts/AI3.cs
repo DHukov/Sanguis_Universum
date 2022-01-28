@@ -7,6 +7,7 @@ public class AI3 : MonoBehaviour
 {
     public Animator animator;
     public Transform target;
+    public bool followEnabled = true;
     [Range(0.5f, 5f)] public float speed = 1f;
     [Range(0.5f, 50f)] public float jumpVelocity = 10f;
     [Range(0.5f, 5f)] public float jumpCooldown = 2f;
@@ -29,7 +30,7 @@ public class AI3 : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone()&&followEnabled)
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
@@ -58,9 +59,12 @@ public class AI3 : MonoBehaviour
             return;
 
         UpdateWaypointIfFarEnough();
-
+       // if (followEnabled)
+       // {
         var direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         UsePhysicsToGoThere(direction);
+       // }
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void UsePhysicsToGoThere(Vector2 direction)
@@ -75,7 +79,7 @@ public class AI3 : MonoBehaviour
         var newVelocity = oldVelocity;
         newVelocity.x = direction.x * speed;
 
-        if (oldVelocity.y == 0 && direction.y > 0.5 && IsReadyToJump())
+        if (oldVelocity.y == 0 && direction.y > 0.8 && IsReadyToJump()&&followEnabled)
         {
             newVelocity.y = jumpVelocity;
             lastJumpTime = Time.realtimeSinceStartup;
@@ -84,7 +88,6 @@ public class AI3 : MonoBehaviour
         rb.velocity = newVelocity;
 
         //Animation speed
-        animator.SetFloat("Speed", Mathf.Abs(newVelocity.x));
     }
 
     bool IsReadyToJump()
