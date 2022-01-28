@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Interaction : MonoBehaviour
 {
     [SerializeField] AudioSource Audio_Src;
-    public AudioClip SoundClip;
 
+    public AudioClip SoundClip;
 
     public bool isInRange;
     public bool AccesToKey = true;

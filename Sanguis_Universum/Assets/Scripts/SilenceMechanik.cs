@@ -13,12 +13,14 @@ public class SilenceMechanik : MonoBehaviour
     public float WasteTime;
     public List<int> add_list = new List<int>();
 
-
-    void Update() => OneClick();
-
-    void OneClick()
+    private void Update()
     {
-                add_list.Add(1);
+        OneClick();
+    }
+     
+    public void OneClick()
+    {
+
         if (Player.GetComponent<Hiding>().hiding == true)
         {
             this.GetComponent<Interaction>().AccesToKey = false;

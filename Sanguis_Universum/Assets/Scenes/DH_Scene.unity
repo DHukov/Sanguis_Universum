@@ -123,16 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &401670375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1911812976180363506, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-  m_PrefabInstance: {fileID: 634062139}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &444658401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8506614943050049811, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-  m_PrefabInstance: {fileID: 634062139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &634062139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1080804657, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
+      propertyPath: Key
+      value: 
+      objectReference: {fileID: 1094852426}
+    - target: {fileID: 1080804657, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
+      propertyPath: LoadUnit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1094852426}
+    - target: {fileID: 1080804657, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
+      propertyPath: SaveUnit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1094852426}
     - target: {fileID: 4305346197092756549, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -188,26 +190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: door
       objectReference: {fileID: 0}
-    - target: {fileID: 4305346197092756552, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: Key
-      value: 
-      objectReference: {fileID: 1094852426}
-    - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: LoadUnit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1094852426}
-    - target: {fileID: 4305346197234288749, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: SaveUnit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1094852426}
-    - target: {fileID: 4305346197234288751, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1094852425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03d50ec1ca8d14346aac3929e4fe1a97, type: 3}
 --- !u!1 &695156395
@@ -351,10 +333,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    - target: {fileID: 6006727582894133163, guid: ec8aa9821e2d95142a5c64203939bad7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec8aa9821e2d95142a5c64203939bad7, type: 3}
 --- !u!1 &781579634 stripped
@@ -453,14 +431,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1094852425}
-    - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
-      propertyPath: SafetyText
-      value: 
-      objectReference: {fileID: 401670375}
-    - target: {fileID: 645775160, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
-      propertyPath: Press_Button
-      value: 
-      objectReference: {fileID: 444658401}
     - target: {fileID: 71722715198404602, guid: b70b9f789b466714daa5916cdc4cbc62, type: 3}
       propertyPath: m_Name
       value: TableH

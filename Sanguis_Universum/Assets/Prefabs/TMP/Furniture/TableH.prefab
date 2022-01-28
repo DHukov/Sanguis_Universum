@@ -533,15 +533,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5314126286711835489, guid: c3f13c08f0f0dbd4284d0a738451caa4, type: 3}
       propertyPath: m_Radius
-      value: 7.8418274
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5314126286711835489, guid: c3f13c08f0f0dbd4284d0a738451caa4, type: 3}
       propertyPath: m_Offset.x
-      value: 0.34727168
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5314126286711835489, guid: c3f13c08f0f0dbd4284d0a738451caa4, type: 3}
       propertyPath: m_Offset.y
-      value: 0.24803543
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5629795715563071229, guid: c3f13c08f0f0dbd4284d0a738451caa4, type: 3}
       propertyPath: m_Name
