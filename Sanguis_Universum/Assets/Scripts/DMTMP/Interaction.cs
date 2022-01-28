@@ -5,7 +5,12 @@ using UnityEngine.Events;
 
 public class Interaction : MonoBehaviour
 {
+    [SerializeField] AudioSource Audio_Src;
+    public AudioClip SoundClip;
+
+
     public bool isInRange;
+    public bool AccesToKey = true;
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
@@ -13,15 +18,15 @@ public class Interaction : MonoBehaviour
     {
         HideButton();
     }
-    
 
     private void HideButton()
     {
-        if (isInRange)
+        if (isInRange && AccesToKey)
         {
             if (Input.GetKeyDown(interactKey))
             {
-
+                Audio_Src.PlayOneShot(SoundClip);
+                AccesToKey = false;
                 interactAction.Invoke();
             }
         }

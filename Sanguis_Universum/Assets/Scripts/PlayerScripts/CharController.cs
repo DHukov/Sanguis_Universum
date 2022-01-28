@@ -189,8 +189,8 @@ public class CharController : MonoBehaviour
     {
         h_Move = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(h_Move));
-        
-        if(m_Grounded && Input.GetAxis("Horizontal")!=0)
+
+        if (m_Grounded && Input.GetAxis("Horizontal") != 0)
         {
             clipRandomize = Random.Range(0, clipWalkArray.Length);
             audioFootsteps.clip = clipWalkArray[clipRandomize];
@@ -201,6 +201,8 @@ public class CharController : MonoBehaviour
                 audioFootsteps.PlayOneShot(audioFootsteps.clip, 1f);
             }
         }
+        else
+            audioFootsteps.Stop();
 
         if (Input.GetButtonDown("Jump"))
         {

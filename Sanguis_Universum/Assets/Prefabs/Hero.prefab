@@ -526,6 +526,7 @@ MonoBehaviour:
   waitTime: 0
   runSpeed: 100
   crouchSpeed: 5
+  step: 0.55
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
