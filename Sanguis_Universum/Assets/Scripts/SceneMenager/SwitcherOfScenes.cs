@@ -28,6 +28,9 @@ public class SwitcherOfScenes : MonoBehaviour
         {
             Teleport();
         }
+        else
+            this.GetComponent<Interaction>().AccesToKey = true;
+
     }
 
     public void Teleport()

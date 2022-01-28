@@ -9,14 +9,21 @@ public class Interaction : MonoBehaviour
 
     public AudioClip SoundClip;
 
+    public bool IsTheDoor;
     public bool isInRange;
-    public bool AccesToKey = true;
+    public bool AccesToKey;
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
+    private void Start()
+    {
+    AccesToKey = true;
+
+    }
     void Update()
     {
         HideButton();
+       
     }
 
     private void HideButton()
