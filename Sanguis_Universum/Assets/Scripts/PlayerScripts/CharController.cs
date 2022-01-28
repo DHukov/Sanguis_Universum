@@ -13,10 +13,10 @@ public class CharController : MonoBehaviour
     public Animator animator;
 
     [SerializeField] AudioSource audioJump;
-    //public AudioClip clipJump;
+    public AudioClip clipJump;
     [SerializeField] AudioSource audioLand;
     //public AudioClip clipLand;
-    [SerializeField] AudioSource audioFootsteps;
+    public AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
     public AudioListener audioListener;
@@ -177,14 +177,18 @@ public class CharController : MonoBehaviour
         if(m_Grounded && Input.GetAxis("Horizontal")!=0)
         {
             clipRandomize = Random.Range(0, clipWalkArray.Length);
-            audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
-            
+            //audioFootsteps.PlayOneShot(clipWalkArray[clipRandomize]);
+            audioFootsteps.clip = clipWalkArray[clipRandomize];
+            audioFootsteps.Play();
+
+
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetTrigger("JumpStart");
+            audioJump.clip = clipJump;
             audioJump.Play();
 
         }
