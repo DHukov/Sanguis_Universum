@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2985031365657391513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2985031366797468570}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3622168793189225235}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackProbe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3285521288730228383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7987182165465647400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GRoundChck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7987182166632212345}
   - component: {fileID: 7987182166632212344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 8536996427728944132}
   - component: {fileID: 8536996427728944134}
   - component: {fileID: 8536996427728944135}
-  - component: {fileID: 8281361414701102535}
   - component: {fileID: 8536996427728944133}
   - component: {fileID: 8536996427728944138}
   - component: {fileID: 2795996858720023166}
@@ -252,7 +251,8 @@ GameObject:
   - component: {fileID: 196594892}
   - component: {fileID: 1519014108852356526}
   - component: {fileID: 6273311042371072056}
-  m_Layer: 0
+  - component: {fileID: 877795883}
+  m_Layer: 3
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -313,35 +313,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -3.4}
-  m_Size: {x: 11, y: 11}
+  m_Offset: {x: 0, y: -5.383697}
+  m_Size: {x: 5.06, y: 6.972618}
   m_Direction: 0
---- !u!61 &8281361414701102535
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536996427728944136}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 8b9ab98810a4acc4fbe35ace5a084d7e, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 5.91}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.65, y: 21.60734}
-    newSize: {x: 12.65, y: 21.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 8, y: 6.5}
-  m_EdgeRadius: 0
 --- !u!114 &8536996427728944133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,9 +343,9 @@ MonoBehaviour:
   GroundCheck: {fileID: 7987182165465647400}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 320
   CeilingCheck: {fileID: 3285521288730228383}
-  CrouchDisableCollider: {fileID: 8281361414701102535}
+  CrouchDisableCollider: {fileID: 0}
   m_JumpForce: 25
   waitTime: 0
   runSpeed: 100
@@ -454,7 +428,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 1f88237069b7153449f38781c07ff0b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -858,3 +832,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &877795883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536996427728944136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5096be39781f140b8839fed4a350c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroundCheck: {fileID: 7987182165465647400}
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  rb: {fileID: 8536996427728944134}
+  feet: {fileID: 8536996427728944135}
+  floorColider: {fileID: 0}
+  boxCillider: {fileID: 0}
+  holdTime: 0.7
+  startHoldTime: 0
+  buttonState: 0
