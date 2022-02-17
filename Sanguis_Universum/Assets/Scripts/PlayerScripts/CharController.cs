@@ -9,7 +9,7 @@ using UnityEngine.Audio;
 
 public class CharController : MonoBehaviour
 {
-
+    [HideInInspector]
     public Animator animator;
 
     [SerializeField] AudioSource audioJump;

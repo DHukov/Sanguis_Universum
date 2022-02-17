@@ -9,8 +9,6 @@ public class Screamer_Script : MonoBehaviour
 
     public bool isActive = true;
 
-
-
     void OnTriggerEnter2D()
     {
         if(isActive)
