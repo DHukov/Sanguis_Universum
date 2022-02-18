@@ -55,17 +55,14 @@ public class Passing_Jumping_Collider : MonoBehaviour
         if (feet.IsTouching(floorColider))
         {
             Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, true);
-            Debug.Log("Is ground");
         }
         else if (rb.velocity.y > 0)
         {
           Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, true);
-          Debug.Log("Turn off");
         }
         else if (rb.velocity.y <= 0 && buttonState == Button.Unpress)
         {
             Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, false);
-            Debug.Log("turn On");
 
         }
         /*
