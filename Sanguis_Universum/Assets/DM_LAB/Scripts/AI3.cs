@@ -30,6 +30,7 @@ public class AI3 : MonoBehaviour
 
     void UpdatePath()
     {
+
         if (seeker.IsDone()&&followEnabled)
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
@@ -69,11 +70,13 @@ public class AI3 : MonoBehaviour
 
     void UsePhysicsToGoThere(Vector2 direction)
     {
+        //GetComponent<Enemy_Rotation>().RotationSeeker();
+        /*
         if (direction.x > 0)
             LookRight();
         else
             LookLeft();
-
+        */ 
 
         var oldVelocity = rb.velocity;
         var newVelocity = oldVelocity;
@@ -95,12 +98,12 @@ public class AI3 : MonoBehaviour
         return Time.realtimeSinceStartup - lastJumpTime > jumpCooldown;
     }
 
-    void LookLeft()
+    public void LookLeft()
     {
         transform.localScale = new Vector3(1, 1, 1f);
     }
 
-    void LookRight()
+    public void LookRight()
     {
         transform.localScale = new Vector3(-1, 1, 1f);
     }

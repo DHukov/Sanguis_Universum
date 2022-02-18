@@ -4,59 +4,103 @@ using UnityEngine;
 
 public class SilenceMechanik : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject enemy;
+    public bool enemyClose;
 
     bool CatchTheTime;
     public int MaxClicks;
     public float TimeForDo;
 
     public float WasteTime;
-    public List<int> add_list = new List<int>();
+    public List<int> clickList = new List<int>();
 
-    private void Update()
+    public void Update()
     {
-        OneClick();
-    }
-     
-    public void OneClick()
-    {
-
-        if (Player.GetComponent<Hiding>().hiding == true)
+        OneClick2();
+        if (enemy.GetComponent<CircleCollider2D>().IsTouching(this.GetComponent<CircleCollider2D>()))
         {
+            enemyClose = true; 
+        }
+        else
+            enemyClose = false;
+
+    }
+    public void OneClick2()
+    {
+        if (enemyClose && player.GetComponent<Hiding>().hiding == true)
+        {
+            //Debug.Log(enemyClose);
             this.GetComponent<Interaction>().AccesToKey = false;
             TimeForDo -= Time.deltaTime;
-
             if (Input.GetKeyDown(KeyCode.T))
             {
-                add_list.Add(1);
+                clickList.Add(1);
                 Debug.LogError("YouAreInSafe");
             }
             if (TimeForDo <= 0 && CatchTheTime == false)
             {
-                Player.GetComponent<Hiding>().NotHiding();
+                player.GetComponent<Hiding>().NotHiding();
             }
-            else if(add_list[MaxClicks] <= MaxClicks)
+            else if (clickList[9] <= MaxClicks)
             {
+                //enemy.GetComponent<Enemy_Patrol>().GetNextTarget();
+                enemy.GetComponent<AI3>().enabled = false;
+                player.GetComponent<Hiding>().patrolState = true;
                 CatchTheTime = true;
                 PressOneMore();
+                TimeForDo = 2;
+            }
+        }
+        else
+            ParametresNotHid();
+
+    }
+
+    /*
+
+    public void OneClick()
+    {
+
+        //Player.GetComponent<Hiding>().hiding == true
+        if (player.GetComponent<Hiding>().hiding == true)
+        {
+            //this.GetComponent<Interaction>().AccesToKey = false;
+            TimeForDo -= Time.deltaTime;
+            Debug.Log(player.GetComponent<Hiding>().hiding);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                clickList.Add(1);
+                Debug.LogError("YouAreInSafe");
+            }
+            if (TimeForDo <= 0 && CatchTheTime == false)
+            {
+                player.GetComponent<Hiding>().NotHiding();
+            }
+            else if(clickList[9] <= MaxClicks)
+            {
+
+
+
             }
         }
         else
             ParametresNotHid();
     }
+    */
     void ParametresNotHid()
     {
         this.GetComponent<Interaction>().AccesToKey = true;
 
         CatchTheTime = false;
-        add_list.Clear();
+        clickList.Clear();
         TimeForDo = 2;
     }
     void PressOneMore()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Player.GetComponent<Hiding>().NotHiding();
+            player.GetComponent<Hiding>().NotHiding();
         }
     }
 }
