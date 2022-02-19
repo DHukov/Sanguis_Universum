@@ -29,7 +29,7 @@ public class CharController : MonoBehaviour
 
     public float m_JumpForce = 400f;
     const float k_GroundedRadius = .05f;
-    const float k_CeilingRadius = .2f;
+    const float k_CeilingRadius = .1f;
     private bool m_Grounded;
     private bool m_FacingRight = true;
     private Vector3 m_Velocity = Vector3.zero;
@@ -92,7 +92,9 @@ public class CharController : MonoBehaviour
 
         if (!crouch)
         {
-            if (Physics2D.OverlapCircle(CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+            //Physics2D.OverlapCircle(CeilingCheck.position, k_CeilingRadius, m_WhatIsGround
+            float dist = 0.2f;
+            if (Physics2D.Raycast(CeilingCheck.position, Vector2.up, dist, m_WhatIsGround))
             {
                 crouch = true;
             }
