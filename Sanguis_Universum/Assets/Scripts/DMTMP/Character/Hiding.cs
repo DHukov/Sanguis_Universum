@@ -6,7 +6,7 @@ public class Hiding : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject enemy;
-    [SerializeField] GameObject patrol;
+    //[SerializeField] GameObject enemy;
 
 
     // [SerializeField] GameObject collider;
@@ -29,7 +29,7 @@ public class Hiding : MonoBehaviour
             {
                 enemy.GetComponent<AI3>().enabled = false;
                 patrolState = true;
-                patrol.GetComponent<Enemy_Patrol>().GetNextTarget();
+                enemy.GetComponent<Enemy_Patrol>().GetNextTarget();
 
             }
             else if (seekerDistance < overviewRange)

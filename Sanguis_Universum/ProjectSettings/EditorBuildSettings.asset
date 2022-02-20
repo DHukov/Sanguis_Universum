@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VilageScene.unity
     guid: 599d09d6dffa2f84182a895511de2ed1
+  - enabled: 1
+    path: Assets/Scenes/Passage_to_the_castle.unity
+    guid: d0f710062c4e9bc4285270fe72f5d190
   m_configObjects: {}

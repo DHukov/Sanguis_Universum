@@ -15,7 +15,7 @@ public class Enemy_Patrol : MonoBehaviour
     public AI3 localMethod;
     private void Start()
     {
-        localMethod = GetComponent<AI3>();
+        localMethod = GetComponent<AI3>();  
         rb = GetComponent<Rigidbody2D>();   
     }
 

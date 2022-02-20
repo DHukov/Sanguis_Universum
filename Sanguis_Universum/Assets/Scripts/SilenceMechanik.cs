@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class SilenceMechanik : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject enemy;
+    public Transform _interface;
+
     public bool enemyClose;
 
     bool CatchTheTime;
@@ -18,6 +23,7 @@ public class SilenceMechanik : MonoBehaviour
     public void Update()
     {
         OneClick2();
+        
         if (enemy.GetComponent<CircleCollider2D>().IsTouching(this.GetComponent<CircleCollider2D>()))
         {
             enemyClose = true; 
@@ -30,13 +36,17 @@ public class SilenceMechanik : MonoBehaviour
     {
         if (enemyClose && player.GetComponent<Hiding>().hiding == true)
         {
-            //Debug.Log(enemyClose);
+            _interface.gameObject.active = true;
+
             this.GetComponent<Interaction>().AccesToKey = false;
             TimeForDo -= Time.deltaTime;
+            //loadTime.fillAmount = (2 - TimeForDo) / 2;
+            _interface.GetChild(2).GetComponent<Image>().fillAmount = (2 - TimeForDo) / 2;
+
             if (Input.GetKeyDown(KeyCode.T))
             {
                 clickList.Add(1);
-                Debug.LogError("YouAreInSafe");
+                _interface.GetChild(1).GetComponent<Image>().fillAmount += 0.1f;
             }
             if (TimeForDo <= 0 && CatchTheTime == false)
             {
@@ -44,12 +54,19 @@ public class SilenceMechanik : MonoBehaviour
             }
             else if (clickList[9] <= MaxClicks)
             {
+                _interface.gameObject.active = false;
+
                 //enemy.GetComponent<Enemy_Patrol>().GetNextTarget();
                 enemy.GetComponent<AI3>().enabled = false;
                 player.GetComponent<Hiding>().patrolState = true;
                 CatchTheTime = true;
                 PressOneMore();
                 TimeForDo = 2;
+
+                _interface.GetChild(2).GetComponent<Image>().fillAmount = 0;
+                _interface.GetChild(1).GetComponent<Image>().fillAmount = 0;
+
+
             }
         }
         else
@@ -57,40 +74,14 @@ public class SilenceMechanik : MonoBehaviour
 
     }
 
-    /*
-
-    public void OneClick()
-    {
-
-        //Player.GetComponent<Hiding>().hiding == true
-        if (player.GetComponent<Hiding>().hiding == true)
-        {
-            //this.GetComponent<Interaction>().AccesToKey = false;
-            TimeForDo -= Time.deltaTime;
-            Debug.Log(player.GetComponent<Hiding>().hiding);
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                clickList.Add(1);
-                Debug.LogError("YouAreInSafe");
-            }
-            if (TimeForDo <= 0 && CatchTheTime == false)
-            {
-                player.GetComponent<Hiding>().NotHiding();
-            }
-            else if(clickList[9] <= MaxClicks)
-            {
-
-
-
-            }
-        }
-        else
-            ParametresNotHid();
-    }
-    */
     void ParametresNotHid()
     {
         this.GetComponent<Interaction>().AccesToKey = true;
+
+        _interface.gameObject.active = false;
+
+        _interface.GetChild(1).GetComponent<Image>().fillAmount = 0;
+        _interface.GetChild(2).GetComponent<Image>().fillAmount = 0;
 
         CatchTheTime = false;
         clickList.Clear();
@@ -100,6 +91,7 @@ public class SilenceMechanik : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             player.GetComponent<Hiding>().NotHiding();
         }
     }

@@ -8,10 +8,11 @@ using UnityEngine;
 public class SwitcherOfScenes : MonoBehaviour
 {
     public Animator anim;
-    public GameObject Message;
     
     [SerializeField] PlayerStats Key;
     [SerializeField] string m_SceneName;
+    [SerializeField] GameObject Interaction;
+
 
     public UnityEvent SaveUnit;
     public UnityEvent LoadUnit;
@@ -24,12 +25,13 @@ public class SwitcherOfScenes : MonoBehaviour
     }
     public void IsOpened()
     {
+
         if (Key.GetComponent<PlayerStats>().key1 == true)
         {
             Teleport();
         }
         else
-            this.GetComponent<Interaction>().AccesToKey = true;
+            Interaction.GetComponent<Interaction>().AccesToKey = true;
 
     }
 
@@ -43,11 +45,12 @@ public class SwitcherOfScenes : MonoBehaviour
     IEnumerator LoadScene()
     {
         AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync(m_SceneName);
-        anim.SetTrigger("FadeOut");
+        anim.SetTrigger("Fade");
         while (!AsyncLoad.isDone)
         {
             yield return null;
         }
+
     }
 }
 /*

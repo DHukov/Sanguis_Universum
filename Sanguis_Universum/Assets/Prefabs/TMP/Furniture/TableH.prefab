@@ -667,8 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec16203e4b03b545be434f5ccda140c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 0}
+  enemy: {fileID: 0}
+  _interface: {fileID: 0}
+  enemyClose: 0
   MaxClicks: 10
   TimeForDo: 2
   WasteTime: 0
-  add_list: 
+  clickList: 
