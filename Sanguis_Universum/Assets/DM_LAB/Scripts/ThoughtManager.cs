@@ -15,11 +15,16 @@ public class ThoughtManager : MonoBehaviour
     void OnTriggerExit2D(Collider2D player)
     {
         StartCoroutine(WaitBeforeDestroy());
+
+        if(gameObject.transform.GetChild(1) != null)
+        {
+            Destroy(gameObject.transform.GetChild(1).gameObject);
+        }
+
     }
     IEnumerator WaitBeforeDestroy()
     {
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
-
     }
 }

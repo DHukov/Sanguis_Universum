@@ -8,7 +8,7 @@ public class AI3 : MonoBehaviour
     public Animator animator;
     public Transform target;
     public bool followEnabled = true;
-    [Range(0.5f, 5f)] public float speed = 1f;
+    [Range(0.5f, 15f)] public float speed = 5f;
     [Range(0.5f, 50f)] public float jumpVelocity = 10f;
     [Range(0.5f, 5f)] public float jumpCooldown = 2f;
     float lastJumpTime;
