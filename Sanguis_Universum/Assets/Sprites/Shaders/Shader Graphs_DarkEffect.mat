@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DarkEffect
+  m_Name: Shader Graphs_DarkEffect
   m_Shader: {fileID: -6465566751694194690, guid: b15d865e5ed0b3947a6da2336d1545fe, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,10 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -36,14 +32,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_144c52fd3fef4f6b82dee74540b03c44: -0.16
-    - Vector1_bcbc5c86481e42d3b0e727e42b9b760a: 0.28
-    - Vector1_cc3c7e67f91c40faaa70ed8fa95ececf: 1.26
+    - Vector1_cc3c7e67f91c40faaa70ed8fa95ececf: 61.63
     m_Colors:
     - Color_95965753010c436180421cd9b5c20b75: {r: 0, g: 0, b: 0, a: 0}
-    - Color_f1cd5500260647ebb49c387ee9729ba3: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_0f4dbda3beb7421abe301beeceef17d2: {r: 0.74, g: 0.5, b: 0, a: 0}
-    - Vector2_38ce7dba9d2649a7b8d6fb3ae400f12a: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_80e0ecb293d348bf8270eb6571251d5d: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_a14938d549e54381ad56bfe778f0261d: {r: -0.13, g: 0, b: 0, a: 0}
+    - Vector2_a14938d549e54381ad56bfe778f0261d: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
