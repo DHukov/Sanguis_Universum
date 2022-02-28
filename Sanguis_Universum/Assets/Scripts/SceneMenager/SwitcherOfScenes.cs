@@ -9,35 +9,38 @@ public class SwitcherOfScenes : MonoBehaviour
 {
     public Animator anim;
     
-    [SerializeField] PlayerStats Key;
+    [SerializeField] GameObject Key;
     [SerializeField] string m_SceneName;
-    [SerializeField] GameObject Interaction;
+    //[SerializeField] GameObject Interaction;
 
 
-    public UnityEvent SaveUnit;
-    public UnityEvent LoadUnit;
+    //public UnityEvent SaveUnit;
+    //public UnityEvent LoadUnit;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-            LoadUnit.Invoke();
-        //Debug.LogError(Key.GetComponent<PlayerStats>().key1);
+        //LoadUnit.Invoke();
+        Key.GetComponent<PlayerStats>().LoadPlayerStats();
+
+
     }
     public void IsOpened()
     {
-
+        Debug.Log("rere");
         if (Key.GetComponent<PlayerStats>().key1 == true)
         {
             Teleport();
         }
         else
-            Interaction.GetComponent<Interaction>().AccesToKey = true;
+            Key.GetComponent<Interaction>().AccesToKey = true;
 
     }
 
     public void Teleport()
     {
-        SaveUnit.Invoke();
+        Key.GetComponent<PlayerStats>().SavePlayer();    
+        //SaveUnit.Invoke();
         StartCoroutine(LoadScene());
     }
 
