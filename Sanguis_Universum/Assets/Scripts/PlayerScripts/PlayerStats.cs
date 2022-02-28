@@ -21,25 +21,37 @@ public class PlayerStats : MonoBehaviour
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
-    private void Update()
+
+    public void Update()
     {
-        if (dead)
+        HealAndDamage(); // simple function for test of mechanic
+        SavesLoad();
+    }
+
+    private void SavesLoad()
+    {
+        if (Input.GetKeyUp(KeyCode.L))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                LoadAll();
-            }
+            LoadAll();
+            //StartCoroutine(LoadSceneCouratine());
+            //LoadScene();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SavePlayer();
+        }
+        if (dead && Input.GetKeyDown(KeyCode.Space))
+        {
+            dead = true;
+            LoadAll();
         }
     }
+
     public void Dead()
     {
         Time.timeScale = 0f;
         DeadScreen.SetActive(dead);
         Debug.LogError(dead);
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            LoadAll();
-        }
     }
     public void Damage(int DamageAmount) // Player take damage and cannot have HP belove 0
     {
@@ -54,6 +66,7 @@ public class PlayerStats : MonoBehaviour
     public void LoadAll()
     {
         StartCoroutine(LoadScene());
+        //LoadPlayerPosition();
         LoadPlayerStats();
         DeadScreen.SetActive(false);
         Time.timeScale = 1f;
@@ -69,6 +82,20 @@ public class PlayerStats : MonoBehaviour
         Health += HealAmount;
         if (Health >= MaxHealth)
             Health = MaxHealth;
+    }
+
+    public void HealAndDamage()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Damage(10);
+            Debug.LogError(Health);
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Heal(10);
+            Debug.LogError(Health);
+        }
     }
 
     public void SavePlayer()
@@ -96,8 +123,22 @@ public class PlayerStats : MonoBehaviour
             yield return null;
         }
     }
+    /*
+        public void LoadScene()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(data.SceneIndex);
+
+        if(SceneIndex == data.SceneIndex)
+        {
+            LoadPlayerPosition();
+        }
+    }
+    */
     public void LoadPlayerStats()
     {
+        //Debug.LogError("Stats");
+
         PlayerData data = SaveSystem.LoadPlayer();
         Health = data.Health;
         Stamina = data.Stamina;

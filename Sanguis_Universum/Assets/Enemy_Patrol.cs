@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Patrol : MonoBehaviour
@@ -9,20 +11,16 @@ public class Enemy_Patrol : MonoBehaviour
     public float localSpeed;
     Rigidbody2D rb;
 
-    int Enemy_Layer, Platform_Layer;
     int ObjectA;
     public AI3 localMethod;
     private void Start()
     {
-        Enemy_Layer = LayerMask.NameToLayer("Enemy");
-        Platform_Layer = LayerMask.NameToLayer("Platforms");
         localMethod = GetComponent<AI3>();  
         rb = GetComponent<Rigidbody2D>();   
     }
 
     void Update()
     {
-        Physics2D.IgnoreLayerCollision(Enemy_Layer, Platform_Layer, true);
         localHiding = EnenemyState.GetComponent<Hiding>().patrolState;
 
         if (localHiding)

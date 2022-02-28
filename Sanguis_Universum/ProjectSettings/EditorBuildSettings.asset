@@ -6,39 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Tochno finale 1 Lvl.unity
-    guid: 2ee82c360f9f9734489c08a765832579
-  - enabled: 1
-    path: Assets/Scenes/HorrorScene.unity
-    guid: 3562cfac4a9e406439b59a837faf7b40
-  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Library_Main Scene.unity
     guid: a0ff585e8a5699648947f59c99a481d2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OlD_Scenes/FirstOne_Scene/FirstOne_Scene.unity
     guid: 8b1504e45d43d5645b17ce243e3ad5bc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OlD_Scenes/Bib_Level.unity
     guid: 5ce39fb550b06e84a99d3d7cfd5e1057
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OlD_Scenes/DM.unity
     guid: 4962378a59880f840b1c3d1658d9166b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OlD_Scenes/First_level.unity
     guid: 8d3ddc68dca811d44bbe1b3b116e4d04
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DH_Scene.unity
     guid: e62e66b3c51de7a47b4a347badb28db8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OlD_Scenes/SampleScene.unity
     guid: 0f6d31e15ec50e944b6ffd78603bb4a2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VilageScene.unity
     guid: 599d09d6dffa2f84182a895511de2ed1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Passage_to_the_castle.unity
     guid: d0f710062c4e9bc4285270fe72f5d190
   m_configObjects: {}
