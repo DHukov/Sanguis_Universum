@@ -15,7 +15,7 @@ public class CharController : MonoBehaviour
     [SerializeField] AudioSource audioJump;
     public AudioClip clipJump;
     [SerializeField] AudioSource audioLand;
-    public AudioClip clipLand;
+    //public AudioClip clipLand;
     public AudioSource audioFootsteps;
     public AudioClip[] clipWalkArray;
     private int clipRandomize;
@@ -48,10 +48,8 @@ public class CharController : MonoBehaviour
 
     public UnityEvent OnLandEvent;
     public VectorValue PlayerPosition;
-    public Button button ;
 
     [System.Serializable]
-
     public class BoolEvent : UnityEvent<bool> { }
     private void Start()
     {
@@ -214,7 +212,6 @@ public class CharController : MonoBehaviour
             animator.SetTrigger("JumpStart");
             audioJump.clip = clipJump;
             audioJump.Play();
-            PlayJump();
         }
 
         if (Mathf.Abs(h_Move) > 0 || !m_Grounded)
@@ -250,7 +247,6 @@ public class CharController : MonoBehaviour
     {
 
         animator.SetTrigger("Landing");
-        PlayLand();
         //audioLand.Play();
     }
 
@@ -281,21 +277,5 @@ public class CharController : MonoBehaviour
         Move(h_Move * Time.fixedDeltaTime, crouch, jump);
         jump = false;
 
-    }
-
-    public void PlayLand()
-    {
-        audioFootsteps.clip = clipLand;
-        audioFootsteps.pitch = 1f;
-        audioFootsteps.volume = 1f;
-        audioFootsteps.Play();
-
-    }
-    public void PlayJump()
-    {
-        audioFootsteps.clip = clipJump;
-        audioFootsteps.pitch = 1f;
-        audioFootsteps.volume = 1f;
-        audioFootsteps.Play();
     }
 }
