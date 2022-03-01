@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 9157423772944849697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -330}
-  m_SizeDelta: {x: 1176, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 1, y: 1}
+  m_SizeDelta: {x: -14, y: 73.6192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9157423772127307479
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -78,9 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0419\u043E\u0431\u0430\u043D\u0430 \u0432 \u0440\u043E\u0442, \u0437\u0430
-    \u043C\u043D\u043E\u0439 \u0431\u0435\u0436\u0438\u0442 \u043A\u0430\u043A\u0430\u044F-\u0442\u043E
-    \u0445\u0443\u0439\u043D\u044F."
+  m_Text: I hope this shit won't spot me. (Spam "T" to hold breath)
 --- !u!1 &9157423772873649363
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9157423772944849697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -226,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

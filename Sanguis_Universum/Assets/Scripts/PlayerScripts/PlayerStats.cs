@@ -33,6 +33,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Dead()
     {
+        
         Time.timeScale = 0f;
         DeadScreen.SetActive(dead);
         Debug.LogError(dead);

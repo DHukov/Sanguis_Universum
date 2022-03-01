@@ -9,17 +9,15 @@ public class Passing_Jumping_Collider : MonoBehaviour
     public LayerMask m_WhatIsGround;
     float k_GroundedRadius = 0.2f;
     int Player_Layer, Box_Layer, Ground_Layer;
-    bool Fall;
     public Rigidbody2D rb;
     public Collider2D feet;
-    public Collider2D floorColider;
-    public Collider2D boxCillider;
+    public Collider2D GroundCollider;
+    public Collider2D boxCollider; 
     float time;
     public float holdTime;
     public float startHoldTime;
 
     public Button buttonState;
-
 
     private void Start()
     {
@@ -52,28 +50,26 @@ public class Passing_Jumping_Collider : MonoBehaviour
         }
 
 
-        if (feet.IsTouching(floorColider))
+        if (feet.IsTouching(GroundCollider))
         {
             Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, true);
         }
         else if (rb.velocity.y > 0)
         {
-          Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, true);
+            Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, true);
         }
         else if (rb.velocity.y <= 0 && buttonState == Button.Unpress)
         {
             Physics2D.IgnoreLayerCollision(Player_Layer, Box_Layer, false);
-
         }
-        /*
-      */
-
-
     }
 
-    public void SomeMethod()
+    void OnCollisionEnter2D(Collision2D other)
     {
-
+        if (other.gameObject.tag == "Roof")
+            this.GetComponent<SpriteRenderer>().sortingOrder = 30;
+        else
+            this.GetComponent<SpriteRenderer>().sortingOrder = 50;
     }
 
 }

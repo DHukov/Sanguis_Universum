@@ -18,28 +18,28 @@ public class Hiding : MonoBehaviour
     public float overviewRange;
     public bool patrolState;
 
+
     public void Hide()
     {
         seekerDistance = Vector3.Distance(enemy.transform.position, player.transform.position);
-        Debug.Log(hiding);
         if (hiding == false)
         {
             hiding = true;
             if (seekerDistance > overviewRange)
             {
-                enemy.GetComponent<AI3>().enabled = false;
-                patrolState = true;
-                enemy.GetComponent<Enemy_Patrol>().GetNextTarget();
+                    Patrol();   
+
+            }
+            else if (player.transform.position.y > 25)
+            {
+                Patrol();
 
             }
             else if (seekerDistance < overviewRange)
             {
-                patrolState = false;
-                enemy.GetComponent<AI3>().enabled = true;
+                NoPatrol();
 
             }
-
-
 
             speedTmp = player.GetComponent<CharController>().runSpeed;
             player.GetComponent<CharController>().runSpeed = 0f;
@@ -62,6 +62,19 @@ public class Hiding : MonoBehaviour
             NotHiding();
             //enemy.GetComponent<Rigidbody2D>().gravityScale = 2;
         }
+    }
+
+    public void NoPatrol()
+    {
+        patrolState = false;
+        enemy.GetComponent<AI3>().enabled = true;
+    }
+
+    public void Patrol()
+    {
+        patrolState = true;
+        enemy.GetComponent<AI3>().enabled = false;
+        enemy.GetComponent<Enemy_Patrol>().GetNextTarget();
     }
 
     public void NotHiding()

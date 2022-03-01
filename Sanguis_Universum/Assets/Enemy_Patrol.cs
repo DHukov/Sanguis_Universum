@@ -12,16 +12,42 @@ public class Enemy_Patrol : MonoBehaviour
     int Enemy_Layer, Platform_Layer;
     int ObjectA;
     public AI3 localMethod;
+    public SilenceMechanik SM;
+    public bool done = true;
     private void Start()
     {
         Enemy_Layer = LayerMask.NameToLayer("Enemy");
         Platform_Layer = LayerMask.NameToLayer("Platforms");
+        rb = GetComponent<Rigidbody2D>();
         localMethod = GetComponent<AI3>();  
-        rb = GetComponent<Rigidbody2D>();   
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(done)
+        CheckTag(collision);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            done = true;
+
+    }
+
+    private void CheckTag(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Interaction")
+        {
+            Debug.Log("touch");
+            SM.enemyClose = true;
+            done = false;
+
+        }
+        else
+            SM.enemyClose = false;
     }
 
     void Update()
     {
+        
         Physics2D.IgnoreLayerCollision(Enemy_Layer, Platform_Layer, true);
         localHiding = EnenemyState.GetComponent<Hiding>().patrolState;
 

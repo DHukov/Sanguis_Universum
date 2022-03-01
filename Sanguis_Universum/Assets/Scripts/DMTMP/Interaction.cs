@@ -11,13 +11,13 @@ public class Interaction : MonoBehaviour
 
     public bool IsTheDoor;
     public bool isInRange;
-    public bool AccesToKey;
+    //public bool AccesToKey;
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
     private void Start()
     {
-    AccesToKey = true;
+    //AccesToKey = true;
 
     }
     void Update()
@@ -28,15 +28,27 @@ public class Interaction : MonoBehaviour
 
     private void HideButton()
     {
-        if (isInRange && AccesToKey)
+        //if (isInRange && AccesToKey)
+        if (isInRange)
+
         {
+            this.gameObject.tag = "Interaction";
+            //= LayerMask.NameToLayer("Interact");
+
             if (Input.GetKeyDown(interactKey))
             {
                 Audio_Src.PlayOneShot(SoundClip);
-                AccesToKey = false;
+                //AccesToKey = false;
                 interactAction.Invoke();
             }
         }
+        else if (!isInRange)
+        {
+            this.gameObject.tag = "Untagged";
+
+        }
+
+
     }
 
 
