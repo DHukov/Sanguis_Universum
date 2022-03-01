@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class soundOfJump : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource source;
+    public AudioClip jump;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space) && !source.isPlaying)
+        {
+            source.clip = jump;
+            source.pitch = 1f;
+            source.volume = 1f;
+            source.Play();
+        }
     }
 }

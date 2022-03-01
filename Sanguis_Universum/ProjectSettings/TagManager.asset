@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Interaction
-  - Roof
+  - Death
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +18,8 @@ TagManager:
   - Wall
   - Ground
   - Enemy
-  - Interact
-  - Roof
+  - Death
+  - 
   - 
   - 
   - 
