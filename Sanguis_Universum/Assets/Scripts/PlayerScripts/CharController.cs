@@ -285,17 +285,23 @@ public class CharController : MonoBehaviour
 
     public void PlayLand()
     {
-        audioFootsteps.clip = clipLand;
-        audioFootsteps.pitch = 1f;
-        audioFootsteps.volume = 1f;
-        audioFootsteps.Play();
+        if (!audioFootsteps.isPlaying)
+        {
+            audioFootsteps.clip = clipLand;
+            audioFootsteps.pitch = 1f;
+            audioFootsteps.volume = 1f;
+            audioFootsteps.Play();
+        }
 
     }
     public void PlayJump()
     {
-        audioFootsteps.clip = clipJump;
-        audioFootsteps.pitch = 1f;
-        audioFootsteps.volume = 1f;
-        audioFootsteps.Play();
+        if (!audioFootsteps.isPlaying)
+        {
+            audioFootsteps.clip = clipJump;
+            audioFootsteps.pitch = 1f;
+            audioFootsteps.volume = 1f;
+            audioFootsteps.Play();
+        }
     }
 }
