@@ -19,21 +19,12 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
-    private void Update()
-    {
-        if (dead)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                LoadAll();
-            }
-        }
     }
     public void Dead()
     {
-        
+        this.GetComponent<AudioSource>().Stop();
         Time.timeScale = 0f;
         DeadScreen.SetActive(dead);
         Debug.LogError(dead);
@@ -57,7 +48,6 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(LoadScene());
         LoadPlayerStats();
         DeadScreen.SetActive(false);
-        Time.timeScale = 1f;
     }
     public PlayerStats(int MaxHealth)
     {
@@ -94,6 +84,7 @@ public class PlayerStats : MonoBehaviour
         AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync(data.SceneIndex);
         while (!AsyncLoad.isDone)
         {
+            Time.timeScale = 1f;
             yield return null;
         }
     }

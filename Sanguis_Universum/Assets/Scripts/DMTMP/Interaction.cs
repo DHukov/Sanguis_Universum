@@ -30,7 +30,6 @@ public class Interaction : MonoBehaviour
     {
         //if (isInRange && AccesToKey)
         if (isInRange)
-
         {
             this.gameObject.tag = "Interaction";
             //= LayerMask.NameToLayer("Interact");
