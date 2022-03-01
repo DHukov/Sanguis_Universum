@@ -5239,7 +5239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4521283406245714824, guid: bdfba7a8efb2c674abe8d37fa907c808, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.9
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 4521283406245714824, guid: bdfba7a8efb2c674abe8d37fa907c808, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6669,6 +6669,7 @@ MonoBehaviour:
   audioJump: {fileID: 1021498445}
   clipJump: {fileID: 8300000, guid: e2edd5db78b1e984695c4b870be284c4, type: 3}
   audioLand: {fileID: 0}
+  clipLand: {fileID: 0}
   audioFootsteps: {fileID: 1021498445}
   clipWalkArray:
   - {fileID: 8300000, guid: bd6785a5ff5f3a44dbf000b0a1f1a361, type: 3}
@@ -6692,6 +6693,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   PlayerPosition: {fileID: 11400000, guid: b85db5334182966458e20c871e2a6e59, type: 2}
+  button: 0
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls:
