@@ -361,8 +361,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308165048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 668.3, y: -14.47, z: 0}
-  m_LocalScale: {x: 0.49466, y: 0.49466, z: 0.49466}
+  m_LocalPosition: {x: 669.64, y: -12.95, z: 0}
+  m_LocalScale: {x: 0.75341666, y: 0.75341666, z: 0.75341666}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -423,7 +423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f8aa1bd8ad8652d438b89897d518eb8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -669,7 +669,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: e6d2a8c34fc3af14589f7044864b1915, type: 3}
   m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
@@ -1084,6 +1084,10 @@ PrefabInstance:
     - target: {fileID: 1091800782869506658, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091800782869506661, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1091800782869506682, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
       propertyPath: DeadScreen
