@@ -16,22 +16,29 @@ public class PlayerStats : MonoBehaviour
     public bool key1;
     public bool key1Used;
     public int SceneIndex;
-
     private void Start()
     {
-
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (SceneIndex == 0)
+            Debug.Log("Menu");
+        else if (SceneIndex != 0)
+        {
+            SavePlayer();
+            Debug.Log(SceneIndex);
+        }
+    }
+    private void Update()
+    {
+        if (dead)
+            if (Input.GetKeyDown(KeyCode.Space))
+                LoadAll();
     }
     public void Dead()
     {
         this.GetComponent<AudioSource>().Stop();
         Time.timeScale = 0f;
         DeadScreen.SetActive(dead);
-        Debug.LogError(dead);
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            LoadAll();
-        }
+        Debug.Log(dead);
     }
     public void Damage(int DamageAmount) // Player take damage and cannot have HP belove 0
     {
@@ -45,6 +52,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadAll()
     {
+        dead = false;
         StartCoroutine(LoadScene());
         LoadPlayerStats();
         DeadScreen.SetActive(false);
@@ -62,10 +70,7 @@ public class PlayerStats : MonoBehaviour
             Health = MaxHealth;
     }
 
-    public void SavePlayer()
-    {
-        SaveSystem.SavePlayer(this);
-    }
+    public void SavePlayer() => SaveSystem.SavePlayer(this);   
 
     public void LoadPlayerPosition()
     {

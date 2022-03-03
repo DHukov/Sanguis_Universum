@@ -131,5 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  offset: {x: 0, y: 0, z: -100}
+  offset: {x: 0, y: 5, z: -100}
   dampT: 0.18

@@ -5,9 +5,9 @@ using UnityEngine;
 public class ThoughtManager : MonoBehaviour
 {
     public Rigidbody2D player;
-
     public GameObject oblako;
 
+    public float _time;
     void OnTriggerEnter2D(Collider2D player)
     {
         oblako.SetActive(true);
@@ -24,7 +24,7 @@ public class ThoughtManager : MonoBehaviour
     }
     IEnumerator WaitBeforeDestroy()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(_time);
         Destroy(gameObject);
     }
 }

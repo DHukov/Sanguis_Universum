@@ -6,6 +6,9 @@ public class Damage : MonoBehaviour
 {
     public GameObject Player;
     public Animator animator;
+    public AudioSource Source;
+    public AudioClip clip;
+
 
     public float DistanceBetween_PlayerAndEnemy;
     public float Atack_Distance;
@@ -25,6 +28,7 @@ public class Damage : MonoBehaviour
         if (Distance <= DistanceBetween_PlayerAndEnemy && Player.GetComponent<Hiding>().hiding == false)
         {
             Player.GetComponent<PlayerStats>().Damage(101);
+            Source.PlayOneShot(clip, 1f);
         }
     }
 }

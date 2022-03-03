@@ -15,12 +15,17 @@ public class Falling : MonoBehaviour
     {
         Source = GetComponent<AudioSource>();
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        Source.PlayOneShot(BookFallen, 1);
+        if (isActive)
+            FallingMethode();
         time = Time.deltaTime;
-        if(!isActive)
-        FallingMethode();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        isActive = true;
+        Source.PlayOneShot(BookFallen, 1);
+        
     }
     public void FallingMethode()
     {
@@ -28,8 +33,8 @@ public class Falling : MonoBehaviour
         Hero.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, alpha);
         if (alpha <= 0)
         {
-            Hero.GetComponent<PlayerStats>().Damage(100);
-            isActive = true;
+            Hero.GetComponent<PlayerStats>().Damage(101);
+            isActive = false;
         }
     }
 }
