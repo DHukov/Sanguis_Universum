@@ -10,15 +10,15 @@ public class AudioController : MonoBehaviour
     public Slider SoundSlider;
     public Slider MusicSlider;
 
-    public void setMusic()
+    public void setMusic(float soundLvl)
     {
-        float soundLvl = Mathf.Log10(MusicSlider.value) * 20;
+        soundLvl = Mathf.Log10(MusicSlider.value) * 20;
         MainMixer.SetFloat("MusicVolume", soundLvl); 
     }
 
-    public void setSound()
+    public void setSound(float masterLvl)
     {
-        float masterLvl = Mathf.Log10(SoundSlider.value) * 20;
+        masterLvl = Mathf.Log10(SoundSlider.value) * 20;
         MainMixer.SetFloat("SoundVolume", masterLvl);
         
 

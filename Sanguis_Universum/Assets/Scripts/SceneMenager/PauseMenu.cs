@@ -34,6 +34,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
+    [System.Obsolete]
     public void QutToMainMenu()
     {
         Time.timeScale = 1f;

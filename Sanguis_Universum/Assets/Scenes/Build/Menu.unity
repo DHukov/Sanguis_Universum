@@ -322,7 +322,7 @@ MonoBehaviour:
       - m_Target: {fileID: 97221754}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: setMusic
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe912490c93ca444d962020d2d1d0d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMixer: {fileID: 24100000, guid: 021a8d6746df8784198ebfcba71216c9, type: 2}
+  MainMixer: {fileID: 24100000, guid: 074d88810bd842e48899550d4901a009, type: 2}
   SoundSlider: {fileID: 1280963808}
   MusicSlider: {fileID: 97221753}
 --- !u!1 &115191576
@@ -1308,11 +1308,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 021a8d6746df8784198ebfcba71216c9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 086d3d746891de94aa7a30708feac55a, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1798,14 +1798,14 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1280963809}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: setSound
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe912490c93ca444d962020d2d1d0d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMixer: {fileID: 0}
+  MainMixer: {fileID: 24100000, guid: 074d88810bd842e48899550d4901a009, type: 2}
   SoundSlider: {fileID: 1280963808}
   MusicSlider: {fileID: 97221753}
 --- !u!1 &1312084504
@@ -3506,12 +3506,12 @@ AudioSource:
   m_GameObject: {fileID: 1900184099}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 021a8d6746df8784198ebfcba71216c9, type: 2}
+  OutputAudioMixerGroup: {fileID: 463553250569318, guid: 074d88810bd842e48899550d4901a009, type: 2}
   m_audioClip: {fileID: 8300000, guid: 393d6ae936a311d499cea8f4e602dfe5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
