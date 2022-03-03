@@ -213,8 +213,11 @@ public class CharController : MonoBehaviour
             jump = true;
             animator.SetTrigger("JumpStart");
             audioJump.clip = clipJump;
-            audioJump.Play();
-            PlayJump();
+            if (jump == true)
+            {
+               // audioJump.PlayOneShot(audioJump.clip, 1F);
+            }
+            //PlayJump();
         }
 
         if (Mathf.Abs(h_Move) > 0 || !m_Grounded)
@@ -250,7 +253,7 @@ public class CharController : MonoBehaviour
     {
 
         animator.SetTrigger("Landing");
-        PlayLand();
+        //PlayLand();
         //audioLand.Play();
     }
 
