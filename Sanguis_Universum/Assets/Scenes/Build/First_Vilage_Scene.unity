@@ -612,18 +612,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021498446}
-    - target: {fileID: 3098324903650196361, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SavePlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 3098324903784903544, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021498446}
-    - target: {fileID: 3098324903784903544, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadAll
-      objectReference: {fileID: 0}
     - target: {fileID: 3098324903976644538, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -707,10 +699,6 @@ PrefabInstance:
     - target: {fileID: 3098324903976644538, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3098324903976644540, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3098324903976644542, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
       propertyPath: m_Name
@@ -3813,7 +3801,7 @@ AudioSource:
   m_GameObject: {fileID: 530208610}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5007914883514492784, guid: 074d88810bd842e48899550d4901a009, type: 2}
   m_audioClip: {fileID: 8300000, guid: ba626e85521d58d4b80d884777446f1b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4276,8 +4264,8 @@ MonoBehaviour:
   m_Text: 'The main character, tortured by the road, after studying in a neighboring
     city, returns home to the village to his father.
 
-    But he discovers that
-    something bad has happened.'
+    But he discovers that something
+    bad has happened.'
 --- !u!222 &550277543
 CanvasRenderer:
   m_ObjectHideFlags: 0
