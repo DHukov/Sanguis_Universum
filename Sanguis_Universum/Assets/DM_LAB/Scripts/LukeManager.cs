@@ -5,12 +5,12 @@ using UnityEngine;
 public class LukeManager : MonoBehaviour
 {
     [SerializeField] Rigidbody2D body;
+    [SerializeField] Rigidbody2D body1;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void UnlockLucke()
     {
-        if(other.tag == "Player")
-        {
             body.bodyType = RigidbodyType2D.Dynamic;
-        }
+            body1.bodyType = RigidbodyType2D.Dynamic;
     }
+
 }
