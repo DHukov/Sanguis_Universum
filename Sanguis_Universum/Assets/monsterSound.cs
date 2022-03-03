@@ -7,12 +7,13 @@ public class monsterSound : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
     int rand;
+    public int prcnt;
 
     // Update is called once per frame
     void Update()
     {
-        rand = Random.Range(0, 2);
-        if (rand == 1 || rand == 0)
+        rand = Random.Range(0, 99);
+        if (rand <= prcnt)
         {
             if (!source.isPlaying)
             {
