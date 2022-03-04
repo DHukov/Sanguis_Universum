@@ -6,6 +6,7 @@ public class MonsterDeath : MonoBehaviour
 {
     [SerializeField] GameObject monster;
     public GameObject DeadPrefab;
+    public GameObject teleport;
     void Update()
     {
         DeadPrefab.transform.position = new Vector3(monster.transform.position.x,
@@ -19,6 +20,12 @@ public class MonsterDeath : MonoBehaviour
             Debug.Log("OPA NIHUYA");
             Destroy(monster);
             DeadPrefab.SetActive(true);
+            StartCoroutine(StartEpologue());
         }
+    }
+    IEnumerator StartEpologue()
+    {
+        yield return new WaitForSeconds(4);
+        teleport.GetComponent<SwitcherOfScenes>().Teleport();
     }
 }

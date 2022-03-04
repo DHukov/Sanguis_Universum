@@ -7,7 +7,8 @@ public class CutScenes : MonoBehaviour
     public GameObject timeLine;
     public GameObject destroy;
     public GameObject enemy;
-
+    public GameObject BoxesOne;
+    public GameObject BoxesTwo;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,5 +21,7 @@ public class CutScenes : MonoBehaviour
         yield return new WaitForSeconds(5);
         enemy.SetActive(true);
         destroy.SetActive(false);
+        BoxesOne.SetActive(false);
+        BoxesTwo.SetActive(true);
     }
 }
