@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Build/Library_Scene.unity
     guid: e0d6311bd216c2f4287e8b9c58c8debe
+  - enabled: 1
+    path: Assets/Scenes/Build/Epilogue.unity
+    guid: 251c75919d35d3c45899c8df5ad963b9
   - enabled: 0
     path: Assets/Scenes/OlD_Scenes/Library_Main Scene.unity
     guid: a0ff585e8a5699648947f59c99a481d2

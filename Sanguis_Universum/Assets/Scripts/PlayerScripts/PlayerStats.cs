@@ -19,9 +19,9 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (SceneIndex == 0)
+        if (SceneIndex == 0 || SceneIndex == 4)
             Debug.Log("Menu");
-        else if (SceneIndex != 0)
+        else if (SceneIndex != 0 || SceneIndex != 4)
         {
             SavePlayer();
             Debug.Log(SceneIndex);

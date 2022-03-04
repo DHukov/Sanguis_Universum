@@ -46,7 +46,7 @@ public class Interaction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            Debug.Log("I'm near something!");
+            //Debug.Log("I'm near something!");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -54,7 +54,7 @@ public class Interaction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            Debug.Log("Anyway...");
+            //Debug.Log("Anyway...");
         }
     }
 }

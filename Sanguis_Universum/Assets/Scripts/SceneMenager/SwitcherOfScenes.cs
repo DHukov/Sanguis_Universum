@@ -22,8 +22,6 @@ public class SwitcherOfScenes : MonoBehaviour
         anim = GetComponent<Animator>();
         //LoadUnit.Invoke();
         Key.GetComponent<PlayerStats>().LoadPlayerStats();
-
-
     }
     public void IsOpened()
     {

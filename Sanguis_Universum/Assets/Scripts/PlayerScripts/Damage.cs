@@ -22,7 +22,7 @@ public class Damage : MonoBehaviour
         if (Distance <= Atack_Distance && Player.GetComponent<Hiding>().hiding == false)
         {
             animator.SetTrigger("Atack");
-            Debug.Log(Distance);
+            //Debug.Log(Distance);
         }
 
         if (Distance <= DistanceBetween_PlayerAndEnemy && Player.GetComponent<Hiding>().hiding == false)
