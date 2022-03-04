@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class monsterSound : MonoBehaviour
 {
-    public AudioSource source;
-    public AudioClip clip;
+    AudioSource source;
+    public AudioClip[] clip;
+
     int rand;
     public int prcnt;
 
     // Update is called once per frame
+    private void Start()
+    {
+        source = this.GetComponent<AudioSource>();
+    }
     void Update()
     {
         rand = Random.Range(0, 99);
@@ -17,7 +22,7 @@ public class monsterSound : MonoBehaviour
         {
             if (!source.isPlaying)
             {
-                source.clip = clip;
+                source.clip = clip[Random.Range(0,2)];
                 source.Play();
             }
         }
