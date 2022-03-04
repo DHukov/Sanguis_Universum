@@ -128,6 +128,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1091800782869506686, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
   m_PrefabInstance: {fileID: 905956862}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &41259540 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1091800782869506681, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
+  m_PrefabInstance: {fileID: 905956862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &41259548 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1091800782869506657, guid: 56a2ca110b5b9f94184ab8c66af7cc07, type: 3}
@@ -1702,6 +1707,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3098324903976644537, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
+      propertyPath: heroSource
+      value: 
+      objectReference: {fileID: 41259540}
     - target: {fileID: 3098324903976644538, guid: 87a34eec2523f9d4db49f64aac396008, type: 3}
       propertyPath: m_Pivot.x
       value: 0
